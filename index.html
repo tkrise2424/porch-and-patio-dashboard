@@ -1,1 +1,1000 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Porch + Patio — Performance Dashboard | Report #1</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f4f6f9; color: #1a1a2e; }
 
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+    color: #fff;
+    padding: 48px 40px 40px;
+    width: 100%;
+  }
+  .header-inner { max-width: 1440px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 24px; }
+  .header-left h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .header-left p { font-size: 1rem; color: #a0aec0; margin-bottom: 16px; }
+  .header-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+  .badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; }
+  .badge-report { background: #0f3460; color: #63b3ed; border: 1px solid #2b6cb0; }
+  .badge-baseline { background: #744210; color: #fbd38d; border: 1px solid #975a16; }
+  .badge-biweekly { background: #1a4731; color: #68d391; border: 1px solid #276749; }
+  .badge-confidential { background: rgba(255,255,255,0.08); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.2); }
+  .header-right { text-align: right; }
+  .header-right .report-meta { font-size: 0.82rem; color: #718096; line-height: 1.8; }
+  .header-right .report-meta strong { color: #e2e8f0; }
+
+  /* ── CADENCE BAR ── */
+  .cadence-bar {
+    background: #0f3460;
+    border-bottom: 3px solid #e94560;
+    padding: 0;
+    width: 100%;
+  }
+  .cadence-bar-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cadence-block {
+    flex: 1 1 200px;
+    padding: 22px 28px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .cadence-block:last-child { border-right: none; }
+  .cadence-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #63b3ed;
+    margin-bottom: 6px;
+  }
+  .cadence-value {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    line-height: 1.4;
+  }
+  .cadence-note {
+    font-size: 0.72rem;
+    color: #fbd38d;
+    margin-top: 4px;
+  }
+
+  /* ── MAIN CONTAINER ── */
+  .main { max-width: 1440px; margin: 0 auto; padding: 48px 40px 80px; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 64px; }
+  .section-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    padding-bottom: 14px;
+    margin-bottom: 28px;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon { font-size: 1.3rem; }
+
+  /* ── AI INSIGHTS ── */
+  .insights-container {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+    border-radius: 16px;
+    padding: 40px;
+    color: #fff;
+  }
+  .insights-summary {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #e2e8f0;
+    margin-bottom: 32px;
+    max-width: 860px;
+  }
+  .insights-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .insight-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .insight-card-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #63b3ed;
+    margin-bottom: 8px;
+  }
+  .insight-card-text {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    line-height: 1.6;
+  }
+
+  /* ── KPI CARDS ── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .kpi-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px 26px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border-top: 4px solid #0f3460;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .kpi-card.accent-green { border-top-color: #38a169; }
+  .kpi-card.accent-orange { border-top-color: #dd6b20; }
+  .kpi-card.accent-purple { border-top-color: #6b46c1; }
+  .kpi-card.accent-red { border-top-color: #e53e3e; }
+  .kpi-card.accent-teal { border-top-color: #2c7a7b; }
+  .kpi-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #718096;
+  }
+  .kpi-value {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 1;
+    margin: 4px 0;
+  }
+  .kpi-sub {
+    font-size: 0.82rem;
+    color: #4a5568;
+    line-height: 1.5;
+  }
+  .kpi-source {
+    font-size: 0.7rem;
+    color: #a0aec0;
+    margin-top: 4px;
+  }
+  .kpi-delta {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #975a16;
+    background: #fefcbf;
+    border: 1px solid #f6e05e;
+    border-radius: 6px;
+    padding: 3px 8px;
+    display: inline-block;
+    margin-top: 6px;
+    width: fit-content;
+  }
+
+  /* ── FUNNEL ── */
+  .funnel { display: flex; flex-direction: column; gap: 4px; }
+  .funnel-step {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 22px 32px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    position: relative;
+    border-left: 5px solid #0f3460;
+  }
+  .funnel-step:nth-child(2) { border-left-color: #2b6cb0; margin: 0 20px; }
+  .funnel-step:nth-child(3) { border-left-color: #38a169; margin: 0 40px; }
+  .funnel-step:nth-child(4) { border-left-color: #dd6b20; margin: 0 60px; }
+  .funnel-step:nth-child(5) { border-left-color: #6b46c1; margin: 0 80px; }
+  .funnel-step-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    min-width: 80px;
+  }
+  .funnel-step-info { flex: 1; }
+  .funnel-step-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #718096;
+    margin-bottom: 4px;
+  }
+  .funnel-step-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+  }
+  .funnel-step-sub {
+    font-size: 0.82rem;
+    color: #4a5568;
+  }
+  .funnel-step-delta {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #975a16;
+    background: #fefcbf;
+    border: 1px solid #f6e05e;
+    border-radius: 6px;
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+  .funnel-arrow {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #cbd5e0;
+    padding: 2px 0;
+  }
+
+  /* ── PERFORMANCE BREAKDOWN TABLE ── */
+  .card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+  .card-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  th {
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #718096;
+    background: #f7fafc;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  td { padding: 12px 14px; border-bottom: 1px solid #f0f4f8; color: #2d3748; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f7fafc; }
+  .status-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .pill-active { background: #c6f6d5; color: #22543d; }
+  .pill-baseline { background: #fefcbf; color: #744210; }
+  .pill-flat { background: #e2e8f0; color: #4a5568; }
+
+  /* ── INSIGHTS LIST ── */
+  .insights-list { display: flex; flex-direction: column; gap: 16px; }
+  .insight-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 22px 26px;
+    border-left: 4px solid #0f3460;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .insight-item.warn { border-left-color: #dd6b20; }
+  .insight-item.good { border-left-color: #38a169; }
+  .insight-item.info { border-left-color: #6b46c1; }
+  .insight-item.note { border-left-color: #2c7a7b; }
+  .insight-num {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #cbd5e0;
+    min-width: 32px;
+    line-height: 1;
+    padding-top: 2px;
+  }
+  .insight-body strong { font-size: 0.95rem; color: #1a1a2e; display: block; margin-bottom: 4px; }
+  .insight-body p { font-size: 0.85rem; color: #4a5568; line-height: 1.6; }
+
+  /* ── HIGH INTENT ── */
+  .intent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .intent-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 26px;
+    border-top: 4px solid #e94560;
+  }
+  .intent-card-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #718096; margin-bottom: 8px; }
+  .intent-card-value { font-size: 1.9rem; font-weight: 800; color: #1a1a2e; margin-bottom: 6px; }
+  .intent-card-desc { font-size: 0.83rem; color: #4a5568; line-height: 1.5; }
+
+  /* ── OPTIMIZATION ── */
+  .opt-list { display: flex; flex-direction: column; gap: 20px; }
+  .opt-item {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 26px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .opt-block-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .opt-trigger .opt-block-label { color: #e53e3e; }
+  .opt-action .opt-block-label { color: #0f3460; }
+  .opt-outcome .opt-block-label { color: #38a169; }
+  .opt-block-text { font-size: 0.87rem; color: #2d3748; line-height: 1.6; }
+
+  /* ── CHANGE SUMMARY ── */
+  .change-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .change-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 26px;
+  }
+  .change-card-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #718096; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #e2e8f0; }
+  .change-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .change-card ul li { font-size: 0.87rem; color: #2d3748; line-height: 1.5; padding-left: 18px; position: relative; }
+  .change-card ul li::before { content: '→'; position: absolute; left: 0; color: #a0aec0; font-weight: 700; }
+
+  /* ── FOOTER ── */
+  .footer { background: #1a1a2e; color: #718096; text-align: center; padding: 28px 40px; font-size: 0.78rem; }
+  .footer strong { color: #e2e8f0; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .header-inner { flex-direction: column; }
+    .header-right { text-align: left; }
+    .cadence-block { flex: 1 1 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .main { padding: 32px 20px 60px; }
+    .opt-item { grid-template-columns: 1fr; }
+    .funnel-step:nth-child(n) { margin: 0; }
+  }
+  @media (max-width: 600px) {
+    .header-left h1 { font-size: 1.5rem; }
+    .kpi-value { font-size: 1.8rem; }
+    .insights-container { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════════ -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-left">
+      <h1>Porch + Patio</h1>
+      <p>Performance Dashboard — AI-Driven Outreach &amp; Intent Program</p>
+      <div class="header-badges">
+        <span class="badge badge-report">Report #1</span>
+        <span class="badge badge-baseline">⚑ Baseline Period</span>
+        <span class="badge badge-biweekly">Biweekly</span>
+        <span class="badge badge-confidential">Confidential</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="report-meta">
+        <div><strong>Reporting Period:</strong> Mar 3 – Apr 21, 2026</div>
+        <div><strong>Report Date:</strong> April 21, 2026</div>
+        <div><strong>Prepared by:</strong> MercenaryMarketing.ai</div>
+        <div><strong>Client:</strong> Porch + Patio (Sissy Blanchard)</div>
+        <div><strong>Locations:</strong> Kingsland &amp; Saint Simons Island, GA</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════
+     CADENCE BAR
+══════════════════════════════════════════════ -->
+<div class="cadence-bar">
+  <div class="cadence-bar-inner">
+    <div class="cadence-block">
+      <div class="cadence-label">Report Cadence</div>
+      <div class="cadence-value">Biweekly — Every 2 Weeks</div>
+    </div>
+    <div class="cadence-block">
+      <div class="cadence-label">Next Update</div>
+      <div class="cadence-value">~May 5, 2026</div>
+      <div class="cadence-note">Report #2 — First Comparison Period</div>
+    </div>
+    <div class="cadence-block">
+      <div class="cadence-label">Data Sources</div>
+      <div class="cadence-value">MMai — Email / SMS / Sequences / Lists</div>
+    </div>
+    <div class="cadence-block">
+      <div class="cadence-label">Comparison Status</div>
+      <div class="cadence-value">Baseline Established</div>
+      <div class="cadence-note">Period-over-period comparisons begin Report #2</div>
+    </div>
+    <div class="cadence-block">
+      <div class="cadence-label">Program Status</div>
+      <div class="cadence-value">✅ Active &amp; Running</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     MAIN CONTENT
+══════════════════════════════════════════════ -->
+<main class="main">
+
+  <!-- ── AI INSIGHTS ── -->
+  <section class="section">
+    <div class="section-title"><span class="icon">🤖</span> AI Insights</div>
+    <div class="insights-container">
+      <p class="insights-summary">
+        Porch + Patio has launched a multi-channel AI outreach program targeting high-intent homeowners across coastal Georgia. In this inaugural period, the program has enrolled <strong>5,071 contacts</strong> across four active sequences — spanning AI intent-identified prospects, anonymous website visitors, and an existing customer re-engagement track. With <strong>1,696 outreach steps executed</strong> and <strong>702 prospects actively in-sequence</strong>, the pipeline is live and building momentum. The anonymous website visitor list capturing <strong>754 identified visitors</strong> (with 58 new additions) represents a particularly high-value signal layer — these are warm, self-selected prospects who have already shown direct interest. The largest opportunity in the next cycle is converting pipeline volume into tracked conversations and store visits.
+      </p>
+      <div class="insights-cards">
+        <div class="insight-card">
+          <div class="insight-card-label">🎯 Strongest Signal</div>
+          <div class="insight-card-text">Anonymous Website Visitor tracking is capturing warm, self-selected prospects. 754 identified visitors with 58 new additions this period — these contacts already have demonstrated intent before any outreach begins.</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-card-label">📈 Pipeline Depth</div>
+          <div class="insight-card-text">927 contacts are queued and not yet started across sequences, meaning the program has significant runway already loaded. Outreach volume will continue to grow without additional list building in the short term.</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-card-label">⚠️ Watch: Bounce Rate</div>
+          <div class="insight-card-text">314 bounces across all sequences (approx. 6.2% of enrolled contacts). This is within normal range for cold AI intent data but warrants monitoring. Email list hygiene on the intent lists should be reviewed next cycle.</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-card-label">🔁 Channel Mix</div>
+          <div class="insight-card-text">Email is the primary outreach channel with SMS available on the Sissy — Outdoor Furniture sequence. The multi-channel setup positions the program well for follow-up diversification in future cycles.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXECUTIVE SUMMARY ── -->
+  <section class="section">
+    <div class="section-title"><span class="icon">📊</span> Executive Summary</div>
+    <div class="kpi-grid">
+
+      <div class="kpi-card">
+        <div class="kpi-label">Intent Signals Identified</div>
+        <div class="kpi-value">5,576</div>
+        <div class="kpi-sub">AI-identified homeowners showing outdoor living / furniture purchase intent across target zip codes</div>
+        <div class="kpi-source">Source: MMai — AI Intent Lists</div>
+        <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
+      </div>
+
+      <div class="kpi-card accent-green">
+        <div class="kpi-label">Contacts Enrolled in Sequences</div>
+        <div class="kpi-value">5,071</div>
+        <div class="kpi-sub">Total contacts added across all 4 active sequences since program launch</div>
+        <div class="kpi-source">Source: MMai — Sequences</div>
+        <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
+      </div>
+
+      <div class="kpi-card accent-orange">
+        <div class="kpi-label">Outreach Steps Executed</div>
+        <div class="kpi-value">1,696</div>
+        <div class="kpi-sub">Emails and SMS messages delivered across all active sequences</div>
+        <div class="kpi-source">Source: MMai — Sequences</div>
+        <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
+      </div>
+
+      <div class="kpi-card accent-purple">
+        <div class="kpi-label">Actively In-Sequence</div>
+        <div class="kpi-value">702</div>
+        <div class="kpi-sub">Prospects currently progressing through active outreach steps</div>
+        <div class="kpi-source">Source: MMai — Sequences</div>
+        <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
+      </div>
+
+      <div class="kpi-card accent-teal">
+        <div class="kpi-label">Website Visitors Identified</div>
+        <div class="kpi-value">754</div>
+        <div class="kpi-sub">Anonymous site visitors captured and identified via MMai pixel tracking; 58 new this period</div>
+        <div class="kpi-source">Source: MMai — Anonymous Visitor List</div>
+        <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
+      </div>
+
+      <div class="kpi-card accent-red">
+        <div class="kpi-label">Meetings Booked</div>
+        <div class="kpi-value">—</div>
+        <div class="kpi-sub">Not yet tracked via platform. Recommend adding Calendly or in-store visit tracking next cycle.</div>
+        <div class="kpi-source">Source: Client-Reported (not yet configured)</div>
+        <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FUNNEL OVERVIEW ── -->
+  <section class="section">
+    <div class="section-title"><span class="icon">🔽</span> Funnel Overview</div>
+    <div class="funnel">
+
+      <div class="funnel-step">
+        <div class="funnel-step-num">5,576</div>
+        <div class="funnel-step-info">
+          <div class="funnel-step-label">Stage 1</div>
+          <div class="funnel-step-name">Intent Signals</div>
+          <div class="funnel-step-sub">AI-identified homeowners across Outdoor Furniture + Outdoor Living intent categories in target zip codes</div>
+        </div>
+        <div class="funnel-step-delta">Δ — Baseline</div>
+      </div>
+
+      <div class="funnel-arrow">▼</div>
+
+      <div class="funnel-step">
+        <div class="funnel-step-num">5,071</div>
+        <div class="funnel-step-info">
+          <div class="funnel-step-label">Stage 2</div>
+          <div class="funnel-step-name">Outreach Enrolled</div>
+          <div class="funnel-step-sub">Contacts added to active sequences (AI intent + website visitors + existing customers)</div>
+        </div>
+        <div class="funnel-step-delta">Δ — Baseline</div>
+      </div>
+
+      <div class="funnel-arrow">▼</div>
+
+      <div class="funnel-step">
+        <div class="funnel-step-num">1,696</div>
+        <div class="funnel-step-info">
+          <div class="funnel-step-label">Stage 3</div>
+          <div class="funnel-step-name">Outreach Executed</div>
+          <div class="funnel-step-sub">Email and SMS steps delivered; 927 contacts still queued and pending first touch</div>
+        </div>
+        <div class="funnel-step-delta">Δ — Baseline</div>
+      </div>
+
+      <div class="funnel-arrow">▼</div>
+
+      <div class="funnel-step">
+        <div class="funnel-step-num">0</div>
+        <div class="funnel-step-info">
+          <div class="funnel-step-label">Stage 4</div>
+          <div class="funnel-step-name">Tracked Replies / Conversations</div>
+          <div class="funnel-step-sub">No replies tracked in MMai yet. Conversations may be occurring via phone or in-store — recommend adding a reply tracking mechanism.</div>
+        </div>
+        <div class="funnel-step-delta">Δ — Baseline</div>
+      </div>
+
+      <div class="funnel-arrow">▼</div>
+
+      <div class="funnel-step">
+        <div class="funnel-step-num">—</div>
+        <div class="funnel-step-info">
+          <div class="funnel-step-label">Stage 5</div>
+          <div class="funnel-step-name">Meetings / Store Visits</div>
+          <div class="funnel-step-sub">Not yet tracked. Recommend configuring Calendly or in-store visit reporting to close the funnel loop.</div>
+        </div>
+        <div class="funnel-step-delta">Δ — Baseline</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PERFORMANCE BREAKDOWN ── -->
+  <section class="section">
+    <div class="section-title"><span class="icon">📋</span> Performance Breakdown</div>
+
+    <div class="card">
+      <div class="card-title">Sequence Performance — All Active Sequences</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Sequence Name</th>
+            <th>Channel</th>
+            <th>Total Members</th>
+            <th>In Progress</th>
+            <th>Not Started</th>
+            <th>Completed</th>
+            <th>Bounced</th>
+            <th>Steps Executed</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sissy — Outdoor Furniture AI Intent</strong></td>
+            <td>Email + SMS</td>
+            <td>1,642</td>
+            <td>702</td>
+            <td>927</td>
+            <td>13</td>
+            <td>188</td>
+            <td>938</td>
+            <td><span class="status-pill pill-active">Active</span></td>
+          </tr>
+          <tr>
+            <td><strong>Sissy — Existing Customers</strong></td>
+            <td>Email + SMS</td>
+            <td>2,274</td>
+            <td>149</td>
+            <td>—</td>
+            <td>0</td>
+            <td>1</td>
+            <td>162</td>
+            <td><span class="status-pill pill-active">Active</span></td>
+          </tr>
+          <tr>
+            <td><strong>P+P Team — Outdoor Living AI Intent</strong></td>
+            <td>Email</td>
+            <td>1,012</td>
+            <td>222</td>
+            <td>—</td>
+            <td>13</td>
+            <td>65</td>
+            <td>353</td>
+            <td><span class="status-pill pill-active">Active</span></td>
+          </tr>
+          <tr>
+            <td><strong>P+P Team — Anonymous Website Visitors</strong></td>
+            <td>Email</td>
+            <td>143</td>
+            <td>99</td>
+            <td>—</td>
+            <td>42</td>
+            <td>60</td>
+            <td>243</td>
+            <td><span class="status-pill pill-active">Active</span></td>
+          </tr>
+          <tr style="background:#f7fafc; font-weight:700;">
+            <td><strong>TOTALS</strong></td>
+            <td>—</td>
+            <td><strong>5,071</strong></td>
+            <td><strong>1,172</strong></td>
+            <td><strong>927+</strong></td>
+            <td><strong>68</strong></td>
+            <td><strong>314</strong></td>
+            <td><strong>1,696</strong></td>
+            <td><span class="status-pill pill-baseline">Baseline</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Audience / List Summary</div>
+      <table>
+        <thead>
+          <tr>
+            <th>List Name</th>
+            <th>Type</th>
+            <th>Total Contacts</th>
+            <th>New This Period</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Outdoor Furniture — All Target Zip Codes</strong></td>
+            <td>AI Intent</td>
+            <td>4,197</td>
+            <td>100</td>
+            <td>Primary AI intent source for Sissy sequence</td>
+          </tr>
+          <tr>
+            <td><strong>Outdoor Living — All Target Zip Codes</strong></td>
+            <td>AI Intent</td>
+            <td>1,379</td>
+            <td>30</td>
+            <td>Secondary intent category; feeds P+P Team sequence</td>
+          </tr>
+          <tr>
+            <td><strong>Anonymous Website Visitors</strong></td>
+            <td>Pixel / Visitor ID</td>
+            <td>754</td>
+            <td>58</td>
+            <td>High-intent warm leads; own sequence active</td>
+          </tr>
+          <tr>
+            <td><strong>Combined Customer List (Email + Phone)</strong></td>
+            <td>Existing Customers</td>
+            <td>2,297</td>
+            <td>0</td>
+            <td>Re-engagement list; uploaded Apr 15</td>
+          </tr>
+          <tr>
+            <td><strong>Combined Customer List (Email Only)</strong></td>
+            <td>Existing Customers</td>
+            <td>1,325</td>
+            <td>0</td>
+            <td>Email-only subset; uploaded Apr 15</td>
+          </tr>
+          <tr>
+            <td><strong>Combined Customer List (Phone Only)</strong></td>
+            <td>Existing Customers</td>
+            <td>984</td>
+            <td>0</td>
+            <td>SMS-only subset; uploaded Apr 15</td>
+          </tr>
+          <tr>
+            <td><strong>AI Outreach Engagements</strong></td>
+            <td>Engagement Tracking</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Engagement capture list — not yet populated</td>
+          </tr>
+          <tr style="background:#f7fafc; font-weight:700;">
+            <td><strong>TOTALS</strong></td>
+            <td>—</td>
+            <td><strong>10,936</strong></td>
+            <td><strong>188</strong></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Outreach Schedule — Active Days &amp; Hours</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Enabled</th>
+            <th>Window</th>
+            <th>Timezone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td><span class="status-pill pill-flat">Off</span></td><td>—</td><td>ET</td></tr>
+          <tr><td>Tuesday</td><td><span class="status-pill pill-active">On</span></td><td>10:00 AM – 5:00 PM</td><td>ET</td></tr>
+          <tr><td>Wednesday</td><td><span class="status-pill pill-active">On</span></td><td>10:00 AM – 5:00 PM</td><td>ET</td></tr>
+          <tr><td>Thursday</td><td><span class="status-pill pill-active">On</span></td><td>10:00 AM – 5:00 PM</td><td>ET</td></tr>
+          <tr><td>Friday</td><td><span class="status-pill pill-active">On</span></td><td>10:00 AM – 5:00 PM</td><td>ET</td></tr>
+          <tr><td>Saturday</td><td><span class="status-pill pill-active">On</span></td><td>10:00 AM – 4:00 PM</td><td>ET</td></tr>
+          <tr><td>Sunday</td><td><span class="status-pill pill-flat">Off</span></td><td>—</td><td>ET</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <!-- ── PERFORMANCE INSIGHTS ── -->
+  <section class="section">
+    <div class="section-title"><span class="icon">💡</span> Performance Insights</div>
+    <div class="insights-list">
+
+      <div class="insight-item good">
+        <div class="insight-num">01</div>
+        <div class="insight-body">
+          <strong>The pipeline is deep and actively building.</strong>
+          <p>With 927 contacts still in the "not started" queue on the Sissy — Outdoor Furniture sequence alone, the program has significant outreach runway without requiring additional list building in the immediate term. Volume will continue to grow organically through the next cycle.</p>
+        </div>
+      </div>
+
+      <div class="insight-item good">
+        <div class="insight-num">02</div>
+        <div class="insight-body">
+          <strong>Anonymous Website Visitor sequence is the highest-intent track in the program.</strong>
+          <p>These 143 enrolled contacts already visited the website before receiving outreach — meaning they have pre-existing brand awareness. With 42 completions and 99 still in progress, this sequence has the highest completion rate relative to size and should be prioritized for CTA optimization.</p>
+        </div>
+      </div>
+
+      <div class="insight-item warn">
+        <div class="insight-num">03</div>
+        <div class="insight-body">
+          <strong>Bounce rate on the AI Intent sequence warrants monitoring.</strong>
+          <p>188 bounces on the Outdoor Furniture sequence (11.4% of enrolled) is elevated compared to the other sequences. This is common with third-party AI intent data where email addresses may be less verified. Consider adding an email validation pass on future intent list imports.</p>
+        </div>
+      </div>
+
+      <div class="insight-item info">
+        <div class="insight-num">04</div>
+        <div class="insight-body">
+          <strong>Reply and conversion tracking is the primary gap to close next cycle.</strong>
+          <p>Zero tracked replies across all sequences does not mean zero engagement — it means engagement is not yet being captured in the platform. Phone calls, in-store visits, and direct email replies outside the platform are likely occurring. Closing this loop is the #1 optimization priority for Report #2.</p>
+        </div>
+      </div>
+
+      <div class="insight-item note">
+        <div class="insight-num">05</div>
+        <div class="insight-body">
+          <strong>Existing customer re-engagement is a fast-path opportunity.</strong>
+          <p>The combined customer lists (4,606 total contacts uploaded April 15) represent warm, pre-existing relationships. The Sissy — Existing Customers sequence has only executed 162 steps with 149 in progress — this track is just getting started and may outperform cold intent outreach on reply rate once it ramps.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── HIGH INTENT SIGNALS ── -->
+  <section class="section">
+    <div class="section-title"><span class="icon">🔥</span> High-Intent Activity Signals</div>
+    <div class="intent-grid">
+
+      <div class="intent-card">
+        <div class="intent-card-label">Website Visitor Captures — New This Period</div>
+        <div class="intent-card-value">58</div>
+        <div class="intent-card-desc">New anonymous visitors identified and added to the MMai pixel tracking list. These individuals visited the Porch + Patio website and are now enrolled in a dedicated follow-up sequence — the warmest cold outreach possible.</div>
+      </div>
+
+      <div class="intent-card">
+        <div class="intent-card-label">Total Identified Website Visitors in Pipeline</div>
+        <div class="intent-card-value">754</div>
+        <div class="intent-card-desc">Cumulative identified visitors captured since pixel installation. This list continues to grow passively with every site visit — no additional effort required to build it.</div>
+      </div>
+
+      <div class="intent-card">
+        <div class="intent-card-label">AI Intent Contacts — Outdoor Furniture Category</div>
+        <div class="intent-card-value">4,197</div>
+        <div class="intent-card-desc">Homeowners in target zip codes showing active behavioral signals around outdoor furniture purchase intent. 100 new contacts added this period, indicating ongoing intent activity in the market.</div>
+      </div>
+
+      <div class="intent-card">
+        <div class="intent-card-label">AI Intent Contacts — Outdoor Living Category</div>
+        <div class="intent-card-value">1,379</div>
+        <div class="intent-card-desc">Broader outdoor living intent signals capturing homeowners researching patios, outdoor kitchens, and living spaces — adjacent to core furniture intent and representing an expanded addressable audience.</div>
+      </div>
+
+      <div class="intent-card">
+        <div class="intent-card-label">Outreach Active Right Now</div>
+        <div class="intent-card-value">1,172</div>
+        <div class="intent-card-desc">Contacts currently in-progress across all sequences — receiving active outreach steps today. This number represents the live, working pipeline at any given moment.</div>
+      </div>
+
+      <div class="intent-card">
+        <div class="intent-card-label">Queued &amp; Ready to Launch</div>
+        <div class="intent-card-value">927+</div>
+        <div class="intent-card-desc">Contacts enrolled but not yet reached. These will begin receiving outreach automatically as the schedule continues — representing the near-term pipeline growth already loaded into the system.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── OPTIMIZATION FOCUS ── -->
+  <section class="section">
+    <div class="section-title"><span class="icon">⚙️</span> What We Are Working On to Improve Performance</div>
+    <div class="opt-list">
+
+      <div class="opt-item">
+        <div class="opt-trigger">
+          <div class="opt-block-label">Trigger</div>
+          <div class="opt-block-text">Zero tracked replies despite 1,696 steps executed — engagement is likely happening outside the platform (phone, walk-in, direct email)</div>
+        </div>
+        <div class="opt-action">
+          <div class="opt-block-label">Action</div>
+          <div class="opt-block-text">Configure reply tracking and outcome logging in MMai; add Calendly or in-store visit reporting to close the funnel loop</div>
+        </div>
+        <div class="opt-outcome">
+          <div class="opt-block-label">Expected Outcome</div>
+          <div class="opt-block-text">Accurate reply rate and meeting attribution by Report #2; enables ROI calculation and funnel optimization</div>
+        </div>
+      </div>
+
+      <div class="opt-item">
+        <div class="opt-trigger">
+          <div class="opt-block-label">Trigger</div>
+          <div class="opt-block-text">188 bounces on the Outdoor Furniture AI Intent sequence (11.4% bounce rate) — elevated vs. other sequences</div>
+        </div>
+        <div class="opt-action">
+          <div class="opt-block-label">Action</div>
+          <div class="opt-block-text">Run email validation on future AI intent list imports before loading into sequences; flag and suppress unverified addresses</div>
+        </div>
+        <div class="opt-outcome">
+          <div class="opt-block-label">Expected Outcome</div>
+          <div class="opt-block-text">Reduce bounce rate below 5% on next intent list; improve sender reputation and deliverability over time</div>
+        </div>
+      </div>
+
+      <div class="opt-item">
+        <div class="opt-trigger">
+          <div class="opt-block-label">Trigger</div>
+          <div class="opt-block-text">Website Visitor sequence has the highest completion rate but smallest enrolled audience (143 contacts) — high-intent track is underutilized</div>
+        </div>
+        <div class="opt-action">
+          <div class="opt-block-label">Action</div>
+          <div class="opt-block-text">Review pixel placement across all Porch + Patio web pages; ensure visitor capture is maximized on high-traffic product and location pages</div>
+        </div>
+        <div class="opt-outcome">
+          <div class="opt-block-label">Expected Outcome</div>
+          <div class="opt-block-text">Grow identified visitor list faster; increase volume in the highest-intent sequence track</div>
+        </div>
+      </div>
+
+      <div class="opt-item">
+        <div class="opt-trigger">
+          <div class="opt-block-label">Trigger</div>
+          <div class="opt-block-text">Existing customer re-engagement sequences (4,606 contacts) were only loaded April 15 — barely ramped</div>
+        </div>
+        <div class="opt-action">
+          <div class="opt-block-label">Action</div>
+          <div class="opt-block-text">Monitor existing customer sequence engagement closely in the next 2 weeks; A/B test subject lines and CTAs tailored to returning vs. new customers</div>
+        </div>
+        <div class="opt-outcome">
+          <div class="opt-block-label">Expected Outcome</div>
+          <div class="opt-block-text">Higher reply rates from warm customer base; potential for fast-path store visit bookings from prior buyers</div>
+        </div>
+      </div>
+
+      <div class="opt-item">
+        <div class="opt-trigger">
+          <div class="opt-block-label">Trigger</div>
+          <div class="opt-block-text">Monday and Sunday are disabled in the outreach schedule — 2 of 7 days with zero activity</div>
+        </div>
+        <div class="opt-action">
+          <div class="opt-block-label">Action</div>
+          <div class="opt-block-text">Test enabling Monday outreach (10am–5pm ET) to capture early-week engagement; review Sunday performance data from similar local retail programs before enabling</div>
+        </div>
+        <div class="opt-outcome">
+          <div class="opt-block-label">Expected Outcome</div>
+          <div class="opt-block-text">~14–20% increase in weekly outreach volume; Monday is consistently a strong email open day for consumer audiences</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CHANGE SUMMARY ── -->
+  <section class="section">
+    <div class="section-title"><span class="icon">📝</span> What Changed Since the Last Update</div>
+
+    <div style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(0,0,0,0.07); padding:32px; margin-bottom:24px; border-left:5px solid #f6e05e;">
+      <p style="font-size:0.95rem; color:#744210; font-weight:700; margin-bottom:8px;">⚑ This is the Baseline Report — Report #1</p>
+      <p style="font-size:0.87rem; color:#4a5568; line-height:1.7;">This is the first performance dashboard for Porch + Patio. All metrics in this report establish the benchmark against which future performance will be measured. Period-over-period comparisons will begin in Report #2 (est. May 5, 2026). No prior-period data exists to compare against at this time.</p>
+    </div>
+
+    <div class="change-grid">
+      <div class="change-card">
+        <div class="change-card-label">Program Milestones This Period</div>
+        <ul>
+          <li>4 active sequences launched across email and SMS channels</li>
+          <li>5,071 contacts enrolled across all sequences</li>
+          <li>1,696 outreach steps executed since program launch</li>
+          <li>Anonymous website visitor pixel activated and capturing</li>
+          <li>Existing customer lists uploaded and sequenced (Apr 15)</li>
+        </ul>
+      </div>
+      <div class="change-card">
+        <div class="change-card-label">Infrastructure Built</div>
+        <ul>
+          <li>AI Intent lists built for Outdoor Furniture + Outdoor Living categories</li>
+          <li>Target zip codes configured across coastal Georgia market</li>
+          <li>Outreach schedule set: Tue–Sat, 10am–5pm ET</li>
+          <li>Rate limits configured: 2 emails/day, 2 SMS/day per sender</li>
+          <li>Remove-on-reply automation enabled across sequences</li>
+        </ul>
+      </div>
+      <div class="change-card">
+        <div class="change-card-label">Open Items for Next Cycle</div>
+        <ul>
+          <li>Reply tracking and outcome logging to be configured</li>
+          <li>Meeting / store visit reporting not yet in place</li>
+          <li>Email validation for AI intent imports to be implemented</li>
+          <li>Monday schedule enablement under review</li>
+          <li>AI Outreach Engagements list not yet populated — needs activation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer class="footer">
+  <p><strong>Porch + Patio</strong> — Performance Dashboard | Report #1 | Baseline Period | April 21, 2026</p>
+  <p style="margin-top:6px;">Prepared by <strong>MercenaryMarketing.ai</strong> &nbsp;|&nbsp; Confidential — For Internal Use Only &nbsp;|&nbsp; Next Report: ~May 5, 2026</p>
+</footer>
+
+</body>
+</html>
