@@ -6,7 +6,7 @@
     "periodStart": "4/22/2026",
     "periodEnd": "5/23/2026",
     "periodDays": 32,
-    "generated": "2026-05-23 15:49 EDT",
+    "generated": "2026-05-23 16:05 EDT",
     "dashboardUrl": "http://porch-and-patio.mercenarymarketing.ai/",
     "companyId": "lmkbi2tblqka14hx",
     "prosp": false,
@@ -173,9 +173,9 @@
       "detail": "Existing Customers SMS step is 43% of all executions producing nothing. Phone integration appears broken."
     },
     {
-      "severity": "warning",
-      "title": "Anonymous Visitors: 20.33% Bounce Rate",
-      "detail": "Worst list quality. Likely bot-generated data \u2014 audit source or pause."
+      "severity": "neutral",
+      "title": "Anonymous Visitors: 20.33% Bounce Rate \u2014 Expected for This List Type",
+      "detail": "Anonymous visitor data is inherently noisy. The tool matches IP addresses to companies, guesses emails via pattern-matching, and catches bot/scraper traffic \u2014 all of which produces bounces. At 143 members (61 bounces), this is a tiny list where every bad record stings visually. The 14.33% open rate and 0.67% click rate on what did land are actually solid for this channel. Given the data provider's limitations, this performance is within expected range."
     },
     {
       "severity": "positive",
@@ -185,7 +185,7 @@
     {
       "severity": "info",
       "title": "Open/Click Tracking Now Active",
-      "detail": "Baseline had no tracking. Now 675 opens + 31 clicks visible. Proper period-over-period begins Report #3."
+      "detail": "Baseline had no tracking. Now 675 opens + 31 clicks visible. UTM tracking has also been added to all sequence links for attribution."
     },
     {
       "severity": "neutral",
@@ -201,28 +201,28 @@
     },
     {
       "id": 2,
-      "action": "Clean or Pause Anonymous Visitors",
-      "detail": "20.33% bounce rate damages sender reputation. Audit the visitor ID source."
+      "action": "Launch Out-of-State Buyer Campaign \u2014 Georgia Sales Tax Angle",
+      "detail": "Build a new sequence targeting out-of-state buyers (e.g., Georgia residents). Angle: no sales tax on purchases at Porch + Patio. This is a proven conversion lever for border-state retailers and gives the brand a distinct offer that local competitors can't match."
     },
     {
       "id": 3,
-      "action": "Scale Sissy Outdoor Furniture",
+      "action": "Scale Sissy Outdoor Furniture Campaign",
       "detail": "27.33% OR with 927 queued. Increase send limits and expand intent signal feeds."
     },
     {
       "id": 4,
-      "action": "Add UTM + In-Store Attribution",
-      "detail": "675 people opened \u2014 no way to know how many walked in. Add 'Mention this email' promo."
+      "action": "Audit Current Audiences & Intent Signal Feeds",
+      "detail": "Review all 4 existing audiences for quality, overlap, and freshness. The Outdoor Furniture and Outdoor Living intent sequences have 1,334 members still queued \u2014 ensure the intent signal sources are actively populating with quality data. Check for audience duplication across sequences."
     },
     {
       "id": 5,
-      "action": "Refresh Intent Signal Feeds",
-      "detail": "1,334 members still queued. Verify Outdoor Furniture and Outdoor Living intent sources."
+      "action": "Add In-Store Attribution Loop",
+      "detail": "675 people opened emails \u2014 no way to know how many walked in. Add a 'Mention this email for 10% off' in-store promo to close the attribution loop. UTMs are now on all links, so website visits from email are trackable."
     }
   ],
   "notes": {
     "nextReport": "June 8, 2026 (Monday)",
-    "clientRequest": "All 4 sequences active and sending. No client-requested pauses.",
+    "clientRequest": "All 4 sequences active and sending. No client-requested pauses. UTM tracking now on all sequence links.",
     "dataAvailability": "Open/click tracking now live. Baseline had no tracking (NaN). Period-over-period comparison for opens/clicks begins with Report #3.",
     "smsNote": "SMS delivery 0% \u2014 phone integration needs immediate attention.",
     "bookingNote": "Bookings not tracked \u2014 retail storefront."
