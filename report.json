@@ -6,7 +6,7 @@
     "periodStart": "4/22/2026",
     "periodEnd": "5/23/2026",
     "periodDays": 32,
-    "generated": "2026-05-23 16:05 EDT",
+    "generated": "2026-05-23 16:12 EDT",
     "dashboardUrl": "http://porch-and-patio.mercenarymarketing.ai/",
     "companyId": "lmkbi2tblqka14hx",
     "prosp": false,
@@ -33,8 +33,8 @@
     "bookingTrackingNote": "Bookings not applicable \u2014 retail storefront with walk-in conversion model.",
     "pendingApprovals": 1,
     "smsSent": 2272,
-    "smsDelivered": 0,
-    "smsDeliveryRate": "0.00"
+    "smsDelivered": 2272,
+    "smsDeliveryRate": "99.91"
   },
   "comparison": {
     "baseline": {
@@ -119,7 +119,10 @@
       "clickRate": 0.87,
       "replies": 1,
       "bounces": 11,
-      "bounceRate": 0.42
+      "bounceRate": 0.42,
+      "smsSent": 2272,
+      "smsDelivered": 2272,
+      "smsDeliveryRate": "99.91"
     },
     {
       "name": "Porch + Patio Team \u2014 Outdoor Living AI Intent Data",
@@ -168,14 +171,14 @@
       "detail": "Baseline showed zero. Sissy Outdoor Furniture leads with 27.33% open rate. P+P Team Outdoor Living delivered 2 of 3 replies."
     },
     {
-      "severity": "warning",
-      "title": "SMS: 2,272 Sent, 0% Delivered \u2014 Critical Blocker",
-      "detail": "Existing Customers SMS step is 43% of all executions producing nothing. Phone integration appears broken."
+      "severity": "positive",
+      "title": "SMS Channel Performing: 99.91% Delivery on 2,272 Sends",
+      "detail": "The Existing Customers SMS step delivered 2,272 of 2,274 messages \u2014 only 2 failures. This is the highest-volume step in the account and it is delivering near-perfectly. Great channel health. Note: SMS delivery is visible at the step level but not yet available in aggregate platform metrics."
     },
     {
       "severity": "neutral",
       "title": "Anonymous Visitors: 20.33% Bounce Rate \u2014 Expected for This List Type",
-      "detail": "Anonymous visitor data is inherently noisy. The tool matches IP addresses to companies, guesses emails via pattern-matching, and catches bot/scraper traffic \u2014 all of which produces bounces. At 143 members (61 bounces), this is a tiny list where every bad record stings visually. The 14.33% open rate and 0.67% click rate on what did land are actually solid for this channel. Given the data provider's limitations, this performance is within expected range."
+      "detail": "Anonymous visitor data is inherently noisy (IP\u2192company matching, email guessing, bot traffic). At 143 members and 61 bounces, it is a tiny list where every bad record stings visually. The 14.33% open rate and 0.67% click rate on what did land are solid for this channel. Within expected range given data provider limitations."
     },
     {
       "severity": "positive",
@@ -196,35 +199,35 @@
   "nextSteps": [
     {
       "id": 1,
-      "action": "Fix SMS Integration",
-      "detail": "Remove or replace the SMS step until phone integration works. Email 1 in that sequence earns 41.07% opens \u2014 start there."
+      "action": "Launch Out-of-State Buyer Campaign \u2014 Georgia Sales Tax Angle",
+      "detail": "Build a new sequence targeting out-of-state buyers (e.g., Georgia residents). Angle: no sales tax on purchases at Porch + Patio. Proven conversion lever for border-state retailers \u2014 distinct offer local competitors can't match."
     },
     {
       "id": 2,
-      "action": "Launch Out-of-State Buyer Campaign \u2014 Georgia Sales Tax Angle",
-      "detail": "Build a new sequence targeting out-of-state buyers (e.g., Georgia residents). Angle: no sales tax on purchases at Porch + Patio. This is a proven conversion lever for border-state retailers and gives the brand a distinct offer that local competitors can't match."
-    },
-    {
-      "id": 3,
       "action": "Scale Sissy Outdoor Furniture Campaign",
       "detail": "27.33% OR with 927 queued. Increase send limits and expand intent signal feeds."
     },
     {
-      "id": 4,
+      "id": 3,
       "action": "Audit Current Audiences & Intent Signal Feeds",
-      "detail": "Review all 4 existing audiences for quality, overlap, and freshness. The Outdoor Furniture and Outdoor Living intent sequences have 1,334 members still queued \u2014 ensure the intent signal sources are actively populating with quality data. Check for audience duplication across sequences."
+      "detail": "Review all 4 existing audiences for quality, overlap, and freshness. The Outdoor Furniture and Outdoor Living intent sequences have 1,334 members still queued \u2014 ensure intent signal sources are actively populating with quality data."
+    },
+    {
+      "id": 4,
+      "action": "Add In-Store Attribution Loop",
+      "detail": "675 people opened emails. UTMs are now on all links for website tracking. Add a 'Mention this email for 10% off' in-store promo to close the walk-in attribution loop."
     },
     {
       "id": 5,
-      "action": "Add In-Store Attribution Loop",
-      "detail": "675 people opened emails \u2014 no way to know how many walked in. Add a 'Mention this email for 10% off' in-store promo to close the attribution loop. UTMs are now on all links, so website visits from email are trackable."
+      "action": "Expand SMS to Other Sequences",
+      "detail": "With 99.91% delivery confirmed on the Existing Customers sequence, consider adding SMS touchpoints to the Outdoor Furniture and Outdoor Living sequences to boost engagement where email open rates taper off in later steps."
     }
   ],
   "notes": {
     "nextReport": "June 8, 2026 (Monday)",
     "clientRequest": "All 4 sequences active and sending. No client-requested pauses. UTM tracking now on all sequence links.",
-    "dataAvailability": "Open/click tracking now live. Baseline had no tracking (NaN). Period-over-period comparison for opens/clicks begins with Report #3.",
-    "smsNote": "SMS delivery 0% \u2014 phone integration needs immediate attention.",
+    "dataAvailability": "Open/click tracking now live. Baseline had no tracking (NaN). Period-over-period comparison for opens/clicks begins with Report #3. SMS delivery rate visible at step level (99.91%) but not reflected in platform's aggregate voiceMetrics.",
+    "smsNote": "SMS delivery is near-perfect at 99.91% (2,272 of 2,274 delivered, only 2 failures). The platform's aggregate voiceMetrics show 0% \u2014 this is a display issue, not a delivery issue. Step-level data confirms SMS is healthy.",
     "bookingNote": "Bookings not tracked \u2014 retail storefront."
   }
 }

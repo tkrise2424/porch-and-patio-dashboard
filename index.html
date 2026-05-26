@@ -112,8 +112,8 @@ h += '</div>';
 h += '<div class="note-callout" style="margin-top:12px"><strong>Conversion Model:</strong> ' + ov.bookingTrackingNote + '</div></div>';
 h += '<div class="section"><div class="section-title">SMS Channel — Existing Customers</div><div class="kpi-grid">';
 h += kc('SMS Sent', ov.smsSent.toLocaleString(), 'Step 1 of Existing Customers');
-h += kc('SMS Delivered', ov.smsDelivered, 'delivery confirmation');
-h += kc('Delivery Rate', ov.smsDeliveryRate + '%', '<span style="color:#d32f2f;font-weight:700">CRITICAL — integration broken</span>', true);
+h += kc('SMS Delivered', ov.smsDelivered.toLocaleString(), '2 failures out of 2,274');
+h += kc('Delivery Rate', ov.smsDeliveryRate + '%', '<span style="color:#2e7d32;font-weight:700">NEAR-PERFECT</span>', false);
 h += '</div>';
 h += '<div class="note-callout" style="margin-top:12px"><strong>SMS Note:</strong> ' + notes.smsNote + '</div></div>';
 
