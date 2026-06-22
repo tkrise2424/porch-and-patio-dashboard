@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Porch + Patio | Report #2 | MercenaryMarketing.ai</title>
+<title>Porch + Patio | Report #3 | MercenaryMarketing.ai</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f6;color:#1a1f2e;font-size:15px;line-height:1.6}
@@ -30,6 +30,8 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 .alert-banner{background:#fff3e0;border-left:4px solid #e53935;border-radius:8px;padding:18px 24px;margin-bottom:24px}
 .alert-banner h3{color:#c62828;font-size:1rem;margin-bottom:4px}
 .alert-banner p{color:#5a6275;font-size:0.85rem}
+.alert-good{background:#e8f5e9!important;border-left:4px solid #4caf50!important;color:#2e7d32!important}
+.alert-good h3{color:#2e7d32!important}
 .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
 .kpi-card{background:#fff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
 .kpi-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:1px;color:#8892a4;font-weight:700;margin-bottom:6px}
@@ -44,12 +46,13 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 .seq-name{font-weight:700;color:#1a1f2e;max-width:320px}
 .seq-note{font-size:0.78rem;color:#8892a4}
 .s-paused{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.7rem;font-weight:700;text-transform:uppercase;background:#ffebee;color:#c62828}
+.s-draft{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.7rem;font-weight:700;text-transform:uppercase;background:#fff3e0;color:#e65100}
+.s-active{background:#e8f5e9;color:#2e7d32;font-weight:700;padding:2px 8px;border-radius:4px;font-size:0.75rem}
 .m-good{color:#43a047;font-weight:700}
 .m-warn{color:#e53935;font-weight:700}
 .insights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
-.insight-card{background:#fff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.insight-card{background:#fff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);border-left:4px solid #2e7d32}
 .ic-icon{font-size:1.5rem;margin-bottom:8px}
-.ic-title{font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a1f2e}
 .ic-body{font-size:0.85rem;color:#5a6275;line-height:1.5}
 .ns-list{list-style:none}
 .ns-item{background:#fff;border-radius:10px;padding:16px 20px;margin-bottom:10px;display:flex;align-items:flex-start;gap:14px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
@@ -57,6 +60,18 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 .ns-action{font-weight:700;font-size:0.9rem;color:#1a1f2e}
 .ns-detail{font-size:0.82rem;color:#5a6275;margin-top:4px}
 .note-callout{background:#fff;border-left:4px solid #2e7d32;border-radius:6px;padding:14px 20px;font-size:0.85rem;color:#5a6275;line-height:1.6}
+.match-table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);margin-bottom:16px}
+.match-table th{background:#e8f5e9;padding:10px 12px;text-align:left;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;color:#2e7d32;font-weight:700;border-bottom:2px solid #c8e6c9}
+.match-table td{padding:10px 12px;border-bottom:1px solid #f0f2f6;font-size:0.85rem}
+.match-found{background:#e8f5e9}
+.match-miss{background:#fff3e0}
+.ga-table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);margin-bottom:16px}
+.ga-table th{background:#e3f2fd;padding:10px 12px;text-align:left;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;color:#1565c0;font-weight:700;border-bottom:2px solid #bbdefb}
+.ga-table td{padding:10px 12px;border-bottom:1px solid #f0f2f6;font-size:0.85rem}
+.ga-table .ga-total{background:#e3f2fd;font-weight:700}
+.def-card{background:#f8f9fb;border-radius:8px;padding:14px 18px;margin-bottom:8px;border-left:3px solid #8892a4}
+.def-card .def-name{font-weight:700;font-size:0.9rem;color:#1a1f2e;margin-bottom:4px}
+.def-card .def-desc{font-size:0.82rem;color:#5a6275;line-height:1.5}
 .error{background:#fff0f0;color:#c62828;padding:20px;border-radius:8px}
 @media(max-width:768px){.header,.cadence-bar,.main{padding-left:20px;padding-right:20px}.hdr-left h1{font-size:1.6rem}.kpi-grid{grid-template-columns:repeat(2,1fr)}.insights-grid{grid-template-columns:1fr}}
 </style>
@@ -66,12 +81,13 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 <div class="cadence-bar"><div class="cb-inner"><div class="cb-block"><div class="cb-label">Report Type</div><div class="cb-value" id="cbType">--</div></div><div class="cb-block"><div class="cb-label">Period</div><div class="cb-value" id="cbPeriod">--</div><div class="cb-sub" id="cbDays">--</div></div><div class="cb-block"><div class="cb-label">Baseline</div><div class="cb-value" id="cbBaselinePeriod">--</div><div class="cb-sub" id="cbBaselineDesc">--</div></div><div class="cb-block"><div class="cb-label">Next Report</div><div class="cb-value" id="cbNext">--</div></div></div></div>
 <div class="main" id="mainContent"><div class="error">Loading report data...</div></div>
 <script>
-fetch('report.json?v=4')
+fetch('report.json?v=5')
   .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
   .then(function(d){
 var r=d.report,ov=d.overview,cp=d.comparison,pd=cp.periodDelta,seqs=d.sequences,ins=d.insights,ns=d.nextSteps,notes=d.notes;
+var mb=d.matchbackReport,ga=d.googleAnalytics;
 
-document.getElementById('periodLabel').textContent = r.periodLabel + ' -- #' + r.reportNumber;
+document.getElementById('periodLabel').textContent = r.periodLabel + ' \u2014 #' + r.reportNumber;
 document.getElementById('badgeType').textContent = r.periodLabel;
 document.getElementById('badgeBaseline').textContent = 'Baseline: ' + cp.baseline.period;
 document.getElementById('reportMeta').innerHTML =
@@ -79,38 +95,43 @@ document.getElementById('reportMeta').innerHTML =
   '<br><strong>Dashboard:</strong> <a href="' + r.dashboardUrl + '" style="color:#fff;opacity:0.7">' + r.dashboardUrl + '</a>';
 
 document.getElementById('cbType').textContent = r.periodLabel;
-document.getElementById('cbPeriod').textContent = r.periodStart + ' -- ' + r.periodEnd;
+document.getElementById('cbPeriod').textContent = r.periodStart + ' \u2014 ' + r.periodEnd;
 document.getElementById('cbDays').textContent = r.periodDays + '-Day Period';
 document.getElementById('cbBaselinePeriod').textContent = cp.baseline.period;
-document.getElementById('cbBaselineDesc').textContent = 'Report #1 Baseline';
+document.getElementById('cbBaselineDesc').textContent = 'Report #2 Baseline';
 document.getElementById('cbNext').textContent = notes.nextReport;
 
 var h = '';
 
-// ALL ACTIVE banner
-h += '<div class="alert-banner" style="background:#e8f5e9;border-left:4px solid #4caf50;color:#2e7d32"><h3>ALL 4 SEQUENCES ACTIVE &amp; SENDING</h3><p>' + notes.clientRequest + '</p></div>';
+// Status banner
+var activeCount = seqs.filter(function(s){return s.status==='ACTIVE'}).length;
+var pausedCount = seqs.filter(function(s){return s.status==='PAUSED'}).length;
+var draftCount = seqs.filter(function(s){return s.status==='DRAFT'}).length;
+h += '<div class="alert-banner alert-good"><h3>ALL ' + activeCount + ' ACTIVE SEQUENCES SENDING</h3><p>' + pausedCount + ' paused, ' + draftCount + ' draft (not yet launched). ' + (notes.sequenceChanges||'') + '</p></div>';
 
 // Pipeline Overview
-h += '<div class="section"><div class="section-title">Pipeline Overview</div><div class="kpi-grid">';
-h += kc('Total Members', ov.totalMembers, 'across 3 sequences');
+h += '<div class="section"><div class="section-title">\ud83d\udcca Pipeline Overview</div><div class="kpi-grid">';
+h += kc('Total Members', ov.totalMembers, 'across ' + ov.totalSequences + ' sequences');
 h += kc('Completed', ov.completedMembers, 'all steps finished');
 h += kc('In Progress', ov.inProgressMembers, 'mid-sequence');
-h += kc('Not Started', ov.notStartedMembers, 'queued in pipeline', ov.notStartedMembers > 100);
-h += kc('Total Sent', ov.totalSent, 'across all sequences');
+h += kc('Not Started', ov.notStartedMembers, 'queued in pipeline', ov.notStartedMembers > 500);
+h += kc('Total Sent', ov.totalSent.toLocaleString(), 'across all sequences');
 h += kc('Active Sequences', ov.activeSequences + ' of ' + ov.totalSequences, ov.pausedSequences + ' paused');
 h += '</div></div>';
 
 // Engagement
-h += '<div class="section"><div class="section-title">Engagement Overview</div><div class="kpi-grid">';
+h += '<div class="section"><div class="section-title">\ud83d\udcc8 Engagement Overview</div><div class="kpi-grid">';
 h += kc('Unique Opens', ov.totalUniqueOpens, 'overall OR: ' + ov.openRate + '%');
 h += kc('Unique Clicks', ov.totalUniqueClicks, 'overall CR: ' + ov.clickRate + '%');
 h += kc('Total Replies', ov.totalReplies, 'across all sequences');
 h += kc('Total Bounces', ov.totalBounces, 'overall BR: ' + ov.bounceRate + '%');
 h += kc('Out of Office', ov.totalOOO, 'auto-replies');
-h += kc('Bookings', ov.totalBookings, '<span style="color:#888">retail model — N/A</span>');
+h += kc('Bookings', ov.totalBookings, '<span style="color:#888">retail model \u2014 N/A</span>');
 h += '</div>';
 h += '<div class="note-callout" style="margin-top:12px"><strong>Conversion Model:</strong> ' + ov.bookingTrackingNote + '</div></div>';
-h += '<div class="section"><div class="section-title">SMS Channel — Existing Customers</div><div class="kpi-grid">';
+
+// SMS
+h += '<div class="section"><div class="section-title">\ud83d\udcac SMS Channel \u2014 Existing Customers</div><div class="kpi-grid">';
 h += kc('SMS Sent', ov.smsSent.toLocaleString(), 'Step 1 of Existing Customers');
 h += kc('SMS Delivered', ov.smsDelivered.toLocaleString(), '2 failures out of 2,274');
 h += kc('Delivery Rate', ov.smsDeliveryRate + '%', '<span style="color:#2e7d32;font-weight:700">NEAR-PERFECT</span>', false);
@@ -118,48 +139,126 @@ h += '</div>';
 h += '<div class="note-callout" style="margin-top:12px"><strong>SMS Note:</strong> ' + notes.smsNote + '</div></div>';
 
 // Period Comparison
-h += '<div class="section"><div class="section-title">Period-over-Period Comparison</div><div class="kpi-grid">';
+h += '<div class="section"><div class="section-title">\ud83d\udcc5 Period-over-Period Comparison</div><div class="kpi-grid">';
 h += cc('Executions', cp.current.executions.toLocaleString(), cp.baseline.executions.toLocaleString(), pd.executions);
 h += cc('Completed Members', cp.current.completedMembers, cp.baseline.completedMembers, pd.completedMembers + ' (' + pd.completedMembersPct + ')');
 h += cc('In Progress', cp.current.inProgress.toLocaleString(), cp.baseline.inProgress.toLocaleString(), pd.inProgressChange + ' (' + pd.inProgressPct + ')', true);
-h += cc('Bounces', cp.current.bounces, cp.baseline.bounces, pd.bounces + ' (' + pd.bouncesPct + ')');
+h += cc('Not Started', cp.current.notStarted, cp.baseline.notStarted, pd.notStarted + ' (' + pd.notStartedPct + ')');
+h += cc('Bounces', cp.current.bounces, cp.baseline.bounces, pd.bounces + ' (' + pd.bounceRate + ')');
 h += cc('Replies', cp.current.replies, cp.baseline.replies, String(pd.replies));
-h += cc('SMS Sent', cp.current.smsSent.toLocaleString(), cp.baseline.smsSent, pd.smsSent);
+h += cc('Open Rate', cp.current.openRate + '%', cp.baseline.openRate + '%', pd.openRate);
+h += cc('Click Rate', cp.current.clickRate + '%', cp.baseline.clickRate + '%', pd.clickRate);
 h += '</div></div>';
 
 // Sequence table
-h += '<div class="section"><div class="section-title">Sequence Status & Performance</div>';
+h += '<div class="section"><div class="section-title">\ud83d\udd01 Sequence Status & Performance</div>';
 h += '<div style="overflow-x:auto"><table class="seq-table"><thead><tr>';
-h += '<th>Sequence</th><th>Status</th><th>Members</th><th>Sent</th><th>Opens</th><th>OR</th><th>Clicks</th><th>CR</th><th>Bounces</th><th>BR</th></tr></thead><tbody>';
+h += '<th>Sequence</th><th>Status</th><th>Members</th><th>Sent</th><th>Opens</th><th>OR</th><th>Clicks</th><th>CR</th><th>Bounces</th><th>BR</th><th>Replies</th></tr></thead><tbody>';
 seqs.forEach(function(s) {
+  var statusHtml = s.status==='ACTIVE' ? '<span class="s-active">'+s.status+'</span>' :
+                   s.status==='PAUSED' ? '<span class="s-paused">'+s.status+'</span>' :
+                   '<span class="s-draft">'+s.status+'</span>';
   h += '<tr>';
-  h += '<td><div class="seq-name">' + s.name + '</div><div class="seq-note">' + s.note + '</div><div style="font-size:0.7rem;color:#999;margin-top:2px">Pipeline: ' + s.completedMembers + ' done / ' + s.inProgress + ' active / ' + s.notStarted + ' queued</div></td>';
-  h += '<td><span class="s-active" style="background:#e8f5e9;color:#2e7d32;font-weight:700;padding:2px 8px;border-radius:4px;font-size:0.75rem">' + s.status + '</span></td>';
+  h += '<td><div class="seq-name">' + s.name + '</div><div class="seq-note">' + s.note + '</div>';
+  if(s.delta && s.delta.note) {
+    h += '<div style="font-size:0.7rem;color:#e65100;margin-top:2px">' + s.delta.note + '</div>';
+  } else if(s.delta) {
+    h += '<div style="font-size:0.7rem;color:#999;margin-top:2px">\u0394: ' + s.delta.sent + ' sends, ' + s.delta.opens + ' opens</div>';
+  }
+  h += '</td>';
+  h += '<td>' + statusHtml + '</td>';
   h += '<td>' + s.members + '</td>';
   h += '<td>' + s.sent + '</td>';
-  h += '<td class="' + (s.openRate > 80 ? 'm-good' : '') + '">' + s.uniqueOpens + '</td>';
-  h += '<td class="' + (s.openRate > 80 ? 'm-good' : '') + '">' + s.openRate.toFixed(2) + '%</td>';
-  h += '<td class="' + (s.clickRate > 3 ? 'm-good' : '') + '">' + s.uniqueClicks + '</td>';
-  h += '<td class="' + (s.clickRate > 3 ? 'm-good' : '') + '">' + s.clickRate.toFixed(2) + '%</td>';
-  h += '<td class="' + (s.bounceRate > 5 ? 'm-warn' : '') + '">' + s.bounces + '</td>';
-  h += '<td class="' + (s.bounceRate > 5 ? 'm-warn' : '') + '">' + s.bounceRate.toFixed(2) + '%</td>';
+  h += '<td>' + s.uniqueOpens + '</td>';
+  h += '<td class="' + (s.openRate > 15 ? 'm-good' : '') + '">' + (typeof s.openRate==='number'?s.openRate.toFixed(2):s.openRate) + '%</td>';
+  h += '<td>' + s.uniqueClicks + '</td>';
+  h += '<td class="' + (s.clickRate > 2 ? 'm-good' : '') + '">' + (typeof s.clickRate==='number'?s.clickRate.toFixed(2):s.clickRate) + '%</td>';
+  h += '<td class="' + (s.bounceRate > 10 ? 'm-warn' : '') + '">' + s.bounces + '</td>';
+  h += '<td class="' + (s.bounceRate > 10 ? 'm-warn' : '') + '">' + (typeof s.bounceRate==='number'?s.bounceRate.toFixed(2):s.bounceRate) + '%</td>';
+  h += '<td>' + s.replies + '</td>';
   h += '</tr>';
 });
 h += '</tbody></table></div>';
 h += '<div class="note-callout" style="margin-top:16px"><strong>Notes:</strong> ' + notes.dataAvailability + '</div></div>';
 
+// Matchback Report
+if(mb) {
+  h += '<div class="section"><div class="section-title">\ud83d\udd0d Customer Order Matchback</div>';
+  h += '<div class="note-callout" style="margin-bottom:16px"><strong>' + mb.totalOrders + ' orders</strong> from ' + mb.source + ' | <strong>' + mb.matchedInPlatform + ' matched</strong> (' + mb.matchRate + ') | <strong>' + mb.notFoundInPlatform + ' not found</strong> in platform</div>';
+
+  // Matched
+  h += '<div style="font-weight:700;color:#2e7d32;margin-bottom:8px">\u2705 Matched in Platform (' + mb.matchedList + ')</div>';
+  h += '<table class="match-table"><thead><tr><th>Customer</th><th>Email</th><th>Phone</th><th>Order Date</th><th>Total</th><th>In Sequence?</th></tr></thead><tbody>';
+  mb.matches.forEach(function(m){
+    h += '<tr class="match-found"><td><strong>' + m.firstName + ' ' + m.lastName + '</strong>' + (m.note?' <span style="font-size:0.75rem;color:#888">('+m.note+')</span>':'') + '</td>';
+    h += '<td>' + m.email + '</td><td>' + m.phone + '</td><td>' + m.orderDate + '</td><td><strong>' + m.total + '</strong></td>';
+    h += '<td>' + (m.inSequence ? '\u2705' : '\u274c') + '</td></tr>';
+  });
+  h += '</tbody></table>';
+
+  // Unmatched
+  h += '<div style="font-weight:700;color:#e53935;margin:16px 0 8px">\u274c Not Found in Platform</div>';
+  h += '<table class="match-table"><thead><tr><th>Customer</th><th>Email</th><th>Phone</th><th>Order Date</th><th>Total</th></tr></thead><tbody>';
+  mb.unmatched.forEach(function(m){
+    h += '<tr class="match-miss"><td><strong>' + m.firstName + ' ' + m.lastName + '</strong></td>';
+    h += '<td>' + m.email + '</td><td>' + m.phone + '</td><td>' + m.orderDate + '</td><td><strong>' + m.total + '</strong></td></tr>';
+  });
+  h += '</tbody></table>';
+  h += '<div class="note-callout"><strong>Recommendation:</strong> ' + mb.recommendation + '</div></div>';
+}
+
+// Google Analytics
+if(ga) {
+  h += '<div class="section"><div class="section-title">\ud83d\udcf1 Google Analytics \u2014 UTM Campaign Performance</div>';
+  h += '<div class="note-callout" style="margin-bottom:16px"><strong>Source:</strong> ' + ga.source + ' | Data covers the reporting period</div>';
+
+  // Metric definitions
+  h += '<div style="font-weight:700;color:#1a1f2e;margin-bottom:12px">Metric Definitions</div>';
+  var defs = ga.metricDefinitions;
+  Object.keys(defs).forEach(function(k){
+    var d = defs[k];
+    h += '<div class="def-card"><div class="def-name">' + d.label + '</div><div class="def-desc">' + d.definition + '</div></div>';
+  });
+
+  // GA data table
+  h += '<table class="ga-table" style="margin-top:16px"><thead><tr><th>Segment (Source)</th><th>Campaign ID</th><th>Event Count</th><th>Engaged Sessions</th><th>Sessions</th><th>Key Events</th></tr></thead><tbody>';
+  ga.data.forEach(function(row,i){
+    var isTotal = row.segment.indexOf('Total')===0;
+    h += '<tr class="' + (isTotal?'ga-total':'') + '"><td><strong>' + row.segment + '</strong></td>';
+    h += '<td>' + row.campaignId + '</td>';
+    h += '<td>' + row.eventCount.toLocaleString() + '</td>';
+    h += '<td>' + row.engagedSessions + '</td>';
+    h += '<td>' + row.sessions + '</td>';
+    h += '<td>' + row.keyEvents + '</td></tr>';
+  });
+  h += '</tbody></table>';
+
+  // GA insights
+  if(ga.insights && ga.insights.length) {
+    h += '<div style="font-weight:700;color:#1a1f2e;margin:16px 0 8px">Key Takeaways</div>';
+    h += '<div class="insights-grid">';
+    ga.insights.forEach(function(i){
+      h += '<div class="insight-card" style="border-left-color:#1565c0"><div class="ic-body">' + i + '</div></div>';
+    });
+    h += '</div>';
+  }
+  h += '</div>';
+}
+
 // Insights
-h += '<div class="section"><div class="section-title">Key Insights</div><div class="insights-grid">';
-var ico = {warning: 'WARN', info: 'INFO', positive: 'GOOD', neutral: 'NOTE'};
+h += '<div class="section"><div class="section-title">\ud83d\udca1 Key Insights</div><div class="insights-grid">';
 ins.forEach(function(i) {
-  h += '<div class="insight-card"><div class="ic-icon">[' + ico[i.severity] + ']</div><div class="ic-title">' + i.title + '</div><div class="ic-body">' + i.detail + '</div></div>';
+  var txt = typeof i === 'string' ? i : (i.title ? '<strong>' + i.title + '</strong><br>' + i.detail : i.detail || i);
+  h += '<div class="insight-card"><div class="ic-body">' + txt + '</div></div>';
 });
 h += '</div></div>';
 
 // Next Steps
-h += '<div class="section"><div class="section-title">Recommended Next Steps</div><ul class="ns-list">';
-ns.forEach(function(n) {
-  h += '<li class="ns-item"><div class="ns-prio">' + n.id + '</div><div><div class="ns-action">' + n.action + '</div><div class="ns-detail">' + n.detail + '</div></div></li>';
+h += '<div class="section"><div class="section-title">\u2705 Recommended Next Steps</div><ul class="ns-list">';
+ns.forEach(function(n, idx) {
+  var txt = typeof n === 'string' ? n : n.action;
+  var detail = typeof n === 'string' ? '' : (n.detail || '');
+  h += '<li class="ns-item"><div class="ns-prio">' + (idx+1) + '</div><div><div class="ns-action">' + txt + '</div>' + (detail?'<div class="ns-detail">'+detail+'</div>':'') + '</div></li>';
 });
 h += '</ul></div>';
 
@@ -173,7 +272,7 @@ function kc(label, value, sub, warn) {
 }
 function cc(label, curr, base, delta, neg) {
   var dc = neg || (typeof delta === 'string' && delta.indexOf('-') === 0) ? 'kpi-d-neg' : 'kpi-d-pos';
-  return '<div class="kpi-card"><div class="kpi-label">' + label + '</div><div class="kpi-value" style="font-size:1.4rem">' + curr + '</div><div class="kpi-sub">Baseline: ' + base + '</div><div class="kpi-delta ' + dc + '">d ' + delta + '</div></div>';
+  return '<div class="kpi-card"><div class="kpi-label">' + label + '</div><div class="kpi-value" style="font-size:1.4rem">' + curr + '</div><div class="kpi-sub">Baseline: ' + base + '</div><div class="kpi-delta ' + dc + '">\u0394 ' + delta + '</div></div>';
 }
 </script>
 </body>
