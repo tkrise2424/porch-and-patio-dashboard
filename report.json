@@ -6,7 +6,7 @@
     "periodStart": "5/24/2026",
     "periodEnd": "6/22/2026",
     "periodDays": 30,
-    "generated": "2026-06-22 18:00 EDT",
+    "generated": "2026-06-23 13:18 EDT",
     "dashboardUrl": "http://porch-and-patio.mercenarymarketing.ai/",
     "companyId": "lmkbi2tblqka14hx",
     "prosp": false,
@@ -18,9 +18,9 @@
     "inProgressMembers": 3518,
     "notStartedMembers": 734,
     "totalSent": 7138,
-    "activeSequences": 4,
+    "activeSequences": 5,
     "totalSequences": 5,
-    "pausedSequences": 1,
+    "pausedSequences": 0,
     "totalUniqueOpens": 770,
     "openRate": "10.79",
     "totalUniqueClicks": 60,
@@ -61,7 +61,7 @@
       "replies": 5,
       "bounces": 397,
       "bounceRate": "5.56",
-      "activeSequences": 4,
+      "activeSequences": 5,
       "completedMembers": 812,
       "inProgress": 3518,
       "notStarted": 734,
@@ -86,7 +86,7 @@
       "smsSent": "No change (2,272)",
       "openRate": "-2.02pp (natural campaign maturation)",
       "clickRate": "+0.25pp",
-      "activeSequences": "4 active + 1 paused (Anonymous Visitors)"
+      "activeSequences": "+1 (MailChimp launched)"
     }
   },
   "sequences": [
@@ -207,13 +207,13 @@
       }
     },
     {
-      "name": "Sissy — Existing Customers_MailChimp_May_List_060926_Emails",
-      "note": "3-step email · sender: Sissy Blanchard · NOT YET LAUNCHED",
-      "status": "DRAFT",
-      "members": 0,
+      "name": "Sissy — Existing Customers_MailChimp_May_List_062326_Emails",
+      "note": "3-step email · sender: Sissy Blanchard · Launched Jun 23",
+      "status": "ACTIVE",
+      "members": 2393,
       "completedMembers": 0,
       "inProgress": 0,
-      "notStarted": 0,
+      "notStarted": 2393,
       "sent": 0,
       "uniqueOpens": 0,
       "openRate": 0,
@@ -223,19 +223,23 @@
       "bounces": 0,
       "bounceRate": 0,
       "delta": {
-        "note": "New sequence created 6/9/2026. No members imported yet. Source list: P&P_MailChimp+May2026New_Customers (2,393 leads)."
+        "note": "Launched June 23, 2026 with 2,393 contacts from P&P_MailChimp+May2026New_Customers list."
       }
     }
   ],
-  "matchbackReport": {
-    "title": "Customer Order Matchback — May 1 to June 21, 2026",
+  "customerCoverage": {
+    "title": "Customer Database Coverage Audit",
     "source": "Customer_Orders_3.csv (Saint Simons Island store)",
     "totalOrders": 8,
-    "matchedInPlatform": 3,
-    "notFoundInPlatform": 5,
-    "matchRate": "37.5%",
+    "alreadyInDatabase": 3,
+    "addedToDatabase": 5,
+    "coverageBefore": "37.5%",
+    "coverageAfter": "100%",
+    "addedDate": "June 23, 2026",
+    "clarifyingNote": "These are walk-in retail customers. Cold outreach campaigns are not directly attributable to in-store conversion — see Google Analytics section for campaign-driven website engagement. This audit ensures future email/SMS campaigns can reach all known customers.",
     "matchedList": "P&P_MailChimp+May2026New_Customers",
-    "matchedSequence": "None — list not yet imported into a sequence",
+    "matchedSequence": "Sissy — Existing Customers_MailChimp_May_List_062326_Emails (launched Jun 23)",
+    "recommendation": "All 8 recent Saint Simons Island purchasers are now in the marketing database. Coverage improved from 37.5% to 100%.",
     "matches": [
       {
         "firstName": "Tracey",
@@ -246,7 +250,7 @@
         "orderDate": "June 7, 2026",
         "total": "$1,938.00",
         "inList": true,
-        "inSequence": false
+        "inSequence": true
       },
       {
         "firstName": "Kimberly",
@@ -257,7 +261,7 @@
         "orderDate": "June 3, 2026",
         "total": "$2,241.65",
         "inList": true,
-        "inSequence": false
+        "inSequence": true
       },
       {
         "firstName": "Bob",
@@ -268,7 +272,7 @@
         "orderDate": "May 23, 2026",
         "total": "$908.43",
         "inList": true,
-        "inSequence": false,
+        "inSequence": true,
         "note": "CSV name is Robert; list entry is Bob"
       }
     ],
@@ -280,7 +284,8 @@
         "phone": "(215) 990-7711",
         "orderId": "337407",
         "orderDate": "May 8, 2026",
-        "total": "$1,055.00"
+        "total": "$1,055.00",
+        "status": "Added to database June 23, 2026"
       },
       {
         "firstName": "Patrik",
@@ -289,7 +294,8 @@
         "phone": "(305) 772-1118",
         "orderId": "337359",
         "orderDate": "May 6, 2026",
-        "total": "$359.00"
+        "total": "$359.00",
+        "status": "Added to database June 23, 2026"
       },
       {
         "firstName": "Jenna",
@@ -298,7 +304,8 @@
         "phone": "(214) 724-6028",
         "orderId": "337301",
         "orderDate": "May 5, 2026",
-        "total": "$2,882.58"
+        "total": "$2,882.58",
+        "status": "Added to database June 23, 2026"
       },
       {
         "firstName": "Jimmy",
@@ -307,7 +314,8 @@
         "phone": "(206) 788-6212",
         "orderId": "337267",
         "orderDate": "May 4, 2026",
-        "total": "$199.00"
+        "total": "$199.00",
+        "status": "Added to database June 23, 2026"
       },
       {
         "firstName": "Alyssa",
@@ -316,10 +324,10 @@
         "phone": "(651) 357-2337",
         "orderId": "337188",
         "orderDate": "May 2, 2026",
-        "total": "$4,295.00"
+        "total": "$4,295.00",
+        "status": "Added to database June 23, 2026"
       }
-    ],
-    "recommendation": "Import P&P_MailChimp+May2026New_Customers list into the 'Sissy — Existing Customers_MailChimp_May_List_060926_Emails' sequence to activate the 3 matched contacts. For the 5 unmatched, add them as a new list or append to the existing customer list."
+    ]
   },
   "googleAnalytics": {
     "title": "UTM Campaign Performance — May 1 to June 21, 2026",
@@ -405,14 +413,13 @@
     "SMS channel: 2,272 SMS sent with 99.91% delivery (only 2 failures). No new SMS sends this period — the SMS step was completed in the prior period.",
     "Open rate decline (12.81% → 10.79%) is expected as campaigns mature and reach later-step contacts who are less engaged. Step-3 open rates are 8-9% across all sequences.",
     "Click rate improved (+0.25pp to 0.84%), driven by the Existing Customers email sequence which has a 4.06% click rate on Email Step 1.",
+    "Customer database coverage improved from 37.5% to 100% — all 8 recent Saint Simons Island purchasers are now in the marketing platform and reachable for future campaigns.",
     "Anonymous Visitors sequence was paused during this period. Its 20.33% bounce rate was the highest across all sequences.",
-    "The new MailChimp sequence was created June 9 but has 0 members — the P&P_MailChimp+May2026New_Customers list (2,393 leads) is ready but not yet imported.",
-    "5 of 8 recent customer orders (May 1–June 21) are not in any platform list or sequence — these are missed re-engagement opportunities."
+    "MailChimp sequence launched June 23 with 2,393 contacts — the largest single import in this account's history."
   ],
   "nextSteps": [
-    "Import P&P_MailChimp+May2026New_Customers list into the MailChimp sequence to activate matched customers.",
-    "Add 5 unmatched customers (Kofsky, Penkwitt, Woodberry, Nguyen, Madej) to the platform — either as a new list or appended to the existing customer database.",
-    "Consider adding UTM-tagged links with key event tracking to sequence emails — currently 0 key events attributed to any campaign.",
+    "✅ Customer database coverage now at 100% — all 8 recent Saint Simons Island purchasers added to marketing platform (was 37.5%).",
+    "✅ MailChimp sequence launched June 23 as \"Sissy — Existing Customers_MailChimp_May_List_062326_Emails\" with 2,393 contacts.",
     "Evaluate whether to unpause the Anonymous Visitors sequence or retire it given 20.33% bounce rate."
   ],
   "notes": {
@@ -420,7 +427,7 @@
     "dataAvailability": "All metrics pulled live from platform API on June 22, 2026 at ~5:30 PM EDT. GA4 UTM data covers May 1 – June 21, 2026.",
     "smsNote": "SMS delivery remains near-perfect at 99.91% (2,272 of 2,274 delivered). No new SMS sends this period — all SMS activity occurred in the prior reporting period. Platform aggregate voiceMetrics still shows 0% — this is a display issue, not a delivery issue.",
     "bookingNote": "Bookings not tracked — retail storefront with walk-in conversion model.",
-    "sequenceChanges": "One new sequence created (MailChimp, not yet launched). Anonymous Visitors sequence paused during this period. The 4 original sequences remain active.",
-    "matchbackNote": "Matchback covers 8 orders from Saint Simons Island store (May 1–June 21). 3 of 8 customers (37.5%) exist in the P&P_MailChimp+May2026New_Customers list but are not in any active sequence."
+    "sequenceChanges": "MailChimp sequence launched June 23 with 2,393 contacts. 4 original sequences remain active. Anonymous Visitors remains paused. 5 total sequences (4 active, 1 paused).",
+    "coverageNote": "Customer database coverage audit completed June 23. 3 of 8 recent purchasers were already in the database; the remaining 5 have been added. Coverage is now 100%."
   }
 }
