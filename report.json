@@ -6,21 +6,21 @@
     "periodStart": "5/24/2026",
     "periodEnd": "6/22/2026",
     "periodDays": 30,
-    "generated": "2026-06-23 13:18 EDT",
+    "generated": "2026-06-23 14:45 EDT",
     "dashboardUrl": "http://porch-and-patio.mercenarymarketing.ai/",
     "companyId": "lmkbi2tblqka14hx",
     "prosp": false,
     "status": "published"
   },
   "overview": {
-    "totalMembers": 5064,
+    "totalMembers": 5548,
     "completedMembers": 812,
     "inProgressMembers": 3518,
-    "notStartedMembers": 734,
+    "notStartedMembers": 1218,
     "totalSent": 7138,
-    "activeSequences": 5,
-    "totalSequences": 5,
-    "pausedSequences": 0,
+    "activeSequences": 6,
+    "totalSequences": 6,
+    "pausedSequences": 1,
     "totalUniqueOpens": 770,
     "openRate": "10.79",
     "totalUniqueClicks": 60,
@@ -30,7 +30,7 @@
     "bounceRate": "5.56",
     "totalOOO": 0,
     "totalBookings": 0,
-    "bookingTrackingNote": "Bookings not applicable — retail storefront with walk-in conversion model.",
+    "bookingTrackingNote": "Bookings not applicable \u2014 retail storefront with walk-in conversion model.",
     "pendingApprovals": 1,
     "smsSent": 2272,
     "smsDelivered": 2272,
@@ -38,7 +38,7 @@
   },
   "comparison": {
     "baseline": {
-      "period": "4/22/2026 – 5/23/2026 (Report #2)",
+      "period": "4/22/2026 \u2013 5/23/2026 (Report #2)",
       "executions": 5269,
       "opens": 675,
       "clicks": 31,
@@ -61,7 +61,7 @@
       "replies": 5,
       "bounces": 397,
       "bounceRate": "5.56",
-      "activeSequences": 5,
+      "activeSequences": 6,
       "completedMembers": 812,
       "inProgress": 3518,
       "notStarted": 734,
@@ -86,13 +86,13 @@
       "smsSent": "No change (2,272)",
       "openRate": "-2.02pp (natural campaign maturation)",
       "clickRate": "+0.25pp",
-      "activeSequences": "+1 (MailChimp launched)"
+      "activeSequences": "+2 (MailChimp + 4th of July launched)"
     }
   },
   "sequences": [
     {
-      "name": "Sissy — Outdoor Furniture AI Intent Data",
-      "note": "3-step email · sender: Sissy Blanchard",
+      "name": "Sissy \u2014 Outdoor Furniture AI Intent Data",
+      "note": "3-step email \u00b7 sender: Sissy Blanchard",
       "status": "ACTIVE",
       "members": 1640,
       "completedMembers": 354,
@@ -115,13 +115,13 @@
         "opens": "+30",
         "clicks": "+11",
         "bounces": "+3",
-        "openRate": "27.33 → 19.38",
-        "bounceRate": "15.01 → 9.96"
+        "openRate": "27.33 \u2192 19.38",
+        "bounceRate": "15.01 \u2192 9.96"
       }
     },
     {
-      "name": "Sissy — Existing Customers (Phone #s AND Emails)",
-      "note": "1 SMS + 3 email · sender: Sissy Blanchard",
+      "name": "Sissy \u2014 Existing Customers (Phone #s AND Emails)",
+      "note": "1 SMS + 3 email \u00b7 sender: Sissy Blanchard",
       "status": "ACTIVE",
       "members": 2271,
       "completedMembers": 94,
@@ -148,13 +148,13 @@
         "clicks": "+8",
         "replies": "+2",
         "bounces": "+1",
-        "openRate": "4.91 → 5.66",
-        "clickRate": "0.87 → 0.96"
+        "openRate": "4.91 \u2192 5.66",
+        "clickRate": "0.87 \u2192 0.96"
       }
     },
     {
-      "name": "Porch + Patio Team — Outdoor Living AI Intent Data",
-      "note": "3-step email · sender: P+P Team",
+      "name": "Porch + Patio Team \u2014 Outdoor Living AI Intent Data",
+      "note": "3-step email \u00b7 sender: P+P Team",
       "status": "ACTIVE",
       "members": 1010,
       "completedMembers": 289,
@@ -177,13 +177,13 @@
         "opens": "+12",
         "clicks": "+10",
         "bounces": "+6",
-        "openRate": "14.41 → 9.81",
-        "bounceRate": "11.76 → 7.78"
+        "openRate": "14.41 \u2192 9.81",
+        "bounceRate": "11.76 \u2192 7.78"
       }
     },
     {
-      "name": "Porch + Patio Team — Anonymous Website Visitors",
-      "note": "3-step email · sender: P+P Team · PAUSED",
+      "name": "Porch + Patio Team \u2014 Anonymous Website Visitors",
+      "note": "3-step email \u00b7 sender: P+P Team \u00b7 PAUSED",
       "status": "PAUSED",
       "members": 143,
       "completedMembers": 75,
@@ -202,13 +202,13 @@
         "completed": "0 (unchanged)",
         "inProgress": "0 (unchanged)",
         "notStarted": "0 (unchanged)",
-        "sent": "0 (paused — no new sends)",
+        "sent": "0 (paused \u2014 no new sends)",
         "note": "Sequence paused during this period. All metrics unchanged from Report #2."
       }
     },
     {
-      "name": "Sissy — Existing Customers_MailChimp_May_List_062326_Emails",
-      "note": "3-step email · sender: Sissy Blanchard · Launched Jun 23",
+      "name": "Sissy \u2014 Existing Customers_MailChimp_May_List_062326_Emails",
+      "note": "3-step email \u00b7 sender: Sissy Blanchard \u00b7 Launched Jun 23",
       "status": "ACTIVE",
       "members": 2393,
       "completedMembers": 0,
@@ -225,6 +225,26 @@
       "delta": {
         "note": "Launched June 23, 2026 with 2,393 contacts from P&P_MailChimp+May2026New_Customers list."
       }
+    },
+    {
+      "name": "P+P Team \u2014 Outdoor Furniture Intent \u2014 4th of July",
+      "note": "3-step email \u00b7 sender: P+P Team \u00b7 Launched Jun 23 \u00b7 15% off POLYWOOD (code JULY15)",
+      "status": "ACTIVE",
+      "members": 484,
+      "completedMembers": 0,
+      "inProgress": 0,
+      "notStarted": 484,
+      "sent": 0,
+      "uniqueOpens": 0,
+      "openRate": 0,
+      "uniqueClicks": 0,
+      "clickRate": 0,
+      "replies": 0,
+      "bounces": 0,
+      "bounceRate": 0,
+      "delta": {
+        "note": "Launched June 23, 2026 with 484 contacts. 3-step email: POLYWOOD 15% off promo (code JULY15)."
+      }
     }
   ],
   "customerCoverage": {
@@ -236,9 +256,9 @@
     "coverageBefore": "37.5%",
     "coverageAfter": "100%",
     "addedDate": "June 23, 2026",
-    "clarifyingNote": "These are walk-in retail customers. Cold outreach campaigns are not directly attributable to in-store conversion — see Google Analytics section for campaign-driven website engagement. This audit ensures future email/SMS campaigns can reach all known customers.",
+    "clarifyingNote": "These are walk-in retail customers. Cold outreach campaigns are not directly attributable to in-store conversion \u2014 see Google Analytics section for campaign-driven website engagement. This audit ensures future email/SMS campaigns can reach all known customers.",
     "matchedList": "P&P_MailChimp+May2026New_Customers",
-    "matchedSequence": "Sissy — Existing Customers_MailChimp_May_List_062326_Emails (launched Jun 23)",
+    "matchedSequence": "Sissy \u2014 Existing Customers_MailChimp_May_List_062326_Emails (launched Jun 23)",
     "recommendation": "All 8 recent Saint Simons Island purchasers are now in the marketing database. Coverage improved from 37.5% to 100%.",
     "matches": [
       {
@@ -330,7 +350,7 @@
     ]
   },
   "googleAnalytics": {
-    "title": "UTM Campaign Performance — May 1 to June 21, 2026",
+    "title": "UTM Campaign Performance \u2014 May 1 to June 21, 2026",
     "source": "Google Analytics 4",
     "metricDefinitions": {
       "eventCount": {
@@ -339,21 +359,21 @@
       },
       "engagedSessions": {
         "label": "Engaged sessions",
-        "definition": "The number of sessions that lasted longer than 10 seconds, had a conversion event, or had 2 or more screen/page views. This is a quality-over-quantity metric — it filters out bounces and shows sessions where users actually interacted. Note: This metric is an approximation and may differ across GA4 surfaces."
+        "definition": "The number of sessions that lasted longer than 10 seconds, had a conversion event, or had 2 or more screen/page views. This is a quality-over-quantity metric \u2014 it filters out bounces and shows sessions where users actually interacted. Note: This metric is an approximation and may differ across GA4 surfaces."
       },
       "sessions": {
         "label": "Sessions",
-        "definition": "A session is a group of user interactions with your website within a given time frame (default 30 minutes). Each visit starts a new session. This is the broadest traffic metric — all visitors, including bounces."
+        "definition": "A session is a group of user interactions with your website within a given time frame (default 30 minutes). Each visit starts a new session. This is the broadest traffic metric \u2014 all visitors, including bounces."
       },
       "keyEvents": {
         "label": "Key events",
-        "definition": "Events marked as particularly important to your business. Any event can be designated as a key event. These are your conversions — actions like form submissions, purchases, or phone calls. Only 3 key events were recorded across all campaigns in this period."
+        "definition": "Events marked as particularly important to your business. Any event can be designated as a key event. These are your conversions \u2014 actions like form submissions, purchases, or phone calls. Only 3 key events were recorded across all campaigns in this period."
       }
     },
     "data": [
       {
         "segment": "Total (all sources)",
-        "campaignId": "—",
+        "campaignId": "\u2014",
         "eventCount": 1645,
         "engagedSessions": 52,
         "sessions": 91,
@@ -401,33 +421,33 @@
       }
     ],
     "insights": [
-      "ai-intent-mmai (outdoor-intent) drives the most traffic — 661 events, 46 sessions (50.5% of all sessions). This is the Sissy Outdoor Furniture AI Intent Data sequence.",
-      "customer-sequence-mmai (existing-customers) is second — 421 events, 16 sessions. Strong engagement despite lower volume.",
+      "ai-intent-mmai (outdoor-intent) drives the most traffic \u2014 661 events, 46 sessions (50.5% of all sessions). This is the Sissy Outdoor Furniture AI Intent Data sequence.",
+      "customer-sequence-mmai (existing-customers) is second \u2014 421 events, 16 sessions. Strong engagement despite lower volume.",
       "The only 3 key events (conversions) came from direct/organic traffic (Porch+Patio segment with no campaign ID). No UTM-tagged campaign has generated a key event yet.",
       "Engagement rate (engaged sessions / sessions): outdoor-intent 41.3%, existing-customers 68.8%, team-intent 82.4%. The team-intent sequence has the highest engagement quality.",
-      "mmai newsletter traffic is negligible — only 1 session from 33 events, suggesting mostly bot/crawler activity or a single low-engagement visit."
+      "mmai newsletter traffic is negligible \u2014 only 1 session from 33 events, suggesting mostly bot/crawler activity or a single low-engagement visit."
     ]
   },
   "insights": [
-    "Bounce rate improvement: Overall bounce rate dropped from 7.34% to 5.56% — a 1.78pp improvement. The Existing Customers sequence is the star at 0.37% bounce rate.",
-    "SMS channel: 2,272 SMS sent with 99.91% delivery (only 2 failures). No new SMS sends this period — the SMS step was completed in the prior period.",
-    "Open rate decline (12.81% → 10.79%) is expected as campaigns mature and reach later-step contacts who are less engaged. Step-3 open rates are 8-9% across all sequences.",
+    "Bounce rate improvement: Overall bounce rate dropped from 7.34% to 5.56% \u2014 a 1.78pp improvement. The Existing Customers sequence is the star at 0.37% bounce rate.",
+    "SMS channel: 2,272 SMS sent with 99.91% delivery (only 2 failures). No new SMS sends this period \u2014 the SMS step was completed in the prior period.",
+    "Open rate decline (12.81% \u2192 10.79%) is expected as campaigns mature and reach later-step contacts who are less engaged. Step-3 open rates are 8-9% across all sequences.",
     "Click rate improved (+0.25pp to 0.84%), driven by the Existing Customers email sequence which has a 4.06% click rate on Email Step 1.",
-    "Customer database coverage improved from 37.5% to 100% — all 8 recent Saint Simons Island purchasers are now in the marketing platform and reachable for future campaigns.",
+    "Customer database coverage improved from 37.5% to 100% \u2014 all 8 recent Saint Simons Island purchasers are now in the marketing platform and reachable for future campaigns.",
     "Anonymous Visitors sequence was paused during this period. Its 20.33% bounce rate was the highest across all sequences.",
-    "MailChimp sequence launched June 23 with 2,393 contacts — the largest single import in this account's history."
+    "MailChimp sequence launched June 23 with 2,393 contacts \u2014 the largest single import in this account's history."
   ],
   "nextSteps": [
-    "✅ Customer database coverage now at 100% — all 8 recent Saint Simons Island purchasers added to marketing platform (was 37.5%).",
-    "✅ MailChimp sequence launched June 23 as \"Sissy — Existing Customers_MailChimp_May_List_062326_Emails\" with 2,393 contacts.",
+    "\u2705 Customer database coverage now at 100% \u2014 all 8 recent Saint Simons Island purchasers added to marketing platform (was 37.5%).",
+    "\u2705 MailChimp sequence launched June 23 as \"Sissy \u2014 Existing Customers_MailChimp_May_List_062326_Emails\" with 2,393 contacts.",
     "Evaluate whether to unpause the Anonymous Visitors sequence or retire it given 20.33% bounce rate."
   ],
   "notes": {
     "nextReport": "July 6, 2026 (Monday)",
-    "dataAvailability": "All metrics pulled live from platform API on June 22, 2026 at ~5:30 PM EDT. GA4 UTM data covers May 1 – June 21, 2026.",
-    "smsNote": "SMS delivery remains near-perfect at 99.91% (2,272 of 2,274 delivered). No new SMS sends this period — all SMS activity occurred in the prior reporting period. Platform aggregate voiceMetrics still shows 0% — this is a display issue, not a delivery issue.",
-    "bookingNote": "Bookings not tracked — retail storefront with walk-in conversion model.",
-    "sequenceChanges": "MailChimp sequence launched June 23 with 2,393 contacts. 4 original sequences remain active. Anonymous Visitors remains paused. 5 total sequences (4 active, 1 paused).",
+    "dataAvailability": "All metrics pulled live from platform API on June 22, 2026 at ~5:30 PM EDT. GA4 UTM data covers May 1 \u2013 June 21, 2026.",
+    "smsNote": "SMS delivery remains near-perfect at 99.91% (2,272 of 2,274 delivered). No new SMS sends this period \u2014 all SMS activity occurred in the prior reporting period. Platform aggregate voiceMetrics still shows 0% \u2014 this is a display issue, not a delivery issue.",
+    "bookingNote": "Bookings not tracked \u2014 retail storefront with walk-in conversion model.",
+    "sequenceChanges": "MailChimp sequence launched June 23 with 2,393 contacts. 4th of July POLYWOOD promo sequence launched June 23 with 484 contacts. 5 original sequences remain. Anonymous Visitors remains paused. 6 total sequences (5 active, 1 paused).",
     "coverageNote": "Customer database coverage audit completed June 23. 3 of 8 recent purchasers were already in the database; the remaining 5 have been added. Coverage is now 100%."
   }
 }
