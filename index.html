@@ -3,92 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Porch + Patio | Report #3 | MercenaryMarketing.ai</title>
+<title>Porch + Patio — MMai Report #4</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f6;color:#1a1f2e;font-size:15px;line-height:1.6}
-.header{background:linear-gradient(135deg,#1b3a1a 0%,#2e7d32 60%,#43a047 100%);color:#fff;padding:48px 40px 40px}
-.hdr-inner{max-width:1440px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:24px}
-.hdr-left h1{font-size:2.2rem;font-weight:800;letter-spacing:-0.5px;line-height:1.2;margin-bottom:8px}
-.hdr-left .subtitle{font-size:1.05rem;opacity:0.85;margin-bottom:16px}
-.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
-.badge{display:inline-block;padding:5px 14px;border-radius:20px;font-size:0.78rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
-.badge-interim{background:#ff9800;color:#fff}
-.badge-baseline{background:#ffd54f;color:#1a1f2e}
-.badge-conf{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.2)}
-.hdr-right{text-align:right;font-size:0.88rem;opacity:0.78;line-height:2}
-.hdr-logo{font-size:1rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:0.6;margin-bottom:12px}
-.cadence-bar{background:#fff;border-bottom:1px solid #e1e4e8;padding:20px 40px}
-.cb-inner{max-width:1440px;margin:0 auto;display:flex;gap:32px;flex-wrap:wrap}
-.cb-block{flex:1;min-width:140px}
-.cb-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:1px;color:#8892a4;font-weight:700;margin-bottom:4px}
-.cb-value{font-size:1.05rem;font-weight:700;color:#1a1f2e}
-.cb-sub{font-size:0.78rem;color:#8892a4}
-.main{max-width:1440px;margin:0 auto;padding:32px 40px 60px}
-.section{margin-bottom:40px}
-.section-title{font-size:1.3rem;font-weight:800;color:#2e7d32;margin-bottom:20px;display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:2px solid #e1e4e8}
-.alert-banner{background:#fff3e0;border-left:4px solid #e53935;border-radius:8px;padding:18px 24px;margin-bottom:24px}
-.alert-banner h3{color:#c62828;font-size:1rem;margin-bottom:4px}
-.alert-banner p{color:#5a6275;font-size:0.85rem}
-.alert-good{background:#e8f5e9!important;border-left:4px solid #4caf50!important;color:#2e7d32!important}
-.alert-good h3{color:#2e7d32!important}
-.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.kpi-card{background:#fff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
-.kpi-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:1px;color:#8892a4;font-weight:700;margin-bottom:6px}
-.kpi-value{font-size:2rem;font-weight:800;color:#1a1f2e}
-.kpi-sub{font-size:0.8rem;color:#8892a4}
-.kpi-delta{font-size:0.78rem;font-weight:700;margin-top:4px}
-.kpi-d-neg{color:#e53935}
-.kpi-d-pos{color:#43a047}
-.seq-table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
-.seq-table th{background:#f8f9fb;padding:12px 14px;text-align:left;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;color:#8892a4;font-weight:700;border-bottom:2px solid #e1e4e8}
-.seq-table td{padding:12px 14px;border-bottom:1px solid #f0f2f6;font-size:0.9rem}
-.seq-name{font-weight:700;color:#1a1f2e;max-width:320px}
-.seq-note{font-size:0.78rem;color:#8892a4}
-.s-paused{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.7rem;font-weight:700;text-transform:uppercase;background:#ffebee;color:#c62828}
-.s-draft{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.7rem;font-weight:700;text-transform:uppercase;background:#fff3e0;color:#e65100}
-.s-active{background:#e8f5e9;color:#2e7d32;font-weight:700;padding:2px 8px;border-radius:4px;font-size:0.75rem}
-.m-good{color:#43a047;font-weight:700}
-.m-warn{color:#e53935;font-weight:700}
-.insights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
-.insight-card{background:#fff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);border-left:4px solid #2e7d32}
-.ic-icon{font-size:1.5rem;margin-bottom:8px}
-.ic-body{font-size:0.85rem;color:#5a6275;line-height:1.5}
-.ns-list{list-style:none}
-.ns-item{background:#fff;border-radius:10px;padding:16px 20px;margin-bottom:10px;display:flex;align-items:flex-start;gap:14px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
-.ns-prio{width:32px;height:32px;border-radius:50%;background:#2e7d32;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem;flex-shrink:0}
-.ns-action{font-weight:700;font-size:0.9rem;color:#1a1f2e}
-.ns-detail{font-size:0.82rem;color:#5a6275;margin-top:4px}
-.note-callout{background:#fff;border-left:4px solid #2e7d32;border-radius:6px;padding:14px 20px;font-size:0.85rem;color:#5a6275;line-height:1.6}
-.coverage-table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);margin-bottom:16px}
-.coverage-table th{background:#e8f5e9;padding:10px 12px;text-align:left;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;color:#2e7d32;font-weight:700;border-bottom:2px solid #c8e6c9}
-.coverage-table td{padding:10px 12px;border-bottom:1px solid #f0f2f6;font-size:0.85rem}
-.cov-found{background:#e8f5e9}
+:root {--bg:#f5f6fa;--card:#fff;--text:#1a1f2e;--sub:#666;--accent:#1565c0;--good:#2e7d32;--warn:#c62828;--border:#e0e3eb;--badge:#1565c0;--draft:#f57f17}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{background:linear-gradient(135deg,#1a1f2e 0%,#2d3748 100%);color:#fff;padding:28px 24px;border-radius:12px;margin-bottom:20px}
+.header h1{font-size:1.6rem;font-weight:700;margin-bottom:4px}
+.header .meta{font-size:0.85rem;opacity:0.75;margin-top:6px}
+.header .meta a{color:#fff;opacity:0.7}
+.badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.badge{background:rgba(255,255,255,0.15);padding:4px 12px;border-radius:20px;font-size:0.78rem}
+.section{background:var(--card);border-radius:10px;padding:20px 24px;margin-bottom:16px;border:1px solid var(--border)}
+.section-title{font-size:1.1rem;font-weight:700;margin-bottom:14px;color:var(--text)}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.kpi-card{background:#f8f9fb;border-radius:8px;padding:14px;text-align:center}
+.kpi-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;color:var(--sub);margin-bottom:4px}
+.kpi-value{font-size:1.8rem;font-weight:700;color:var(--text)}
+.kpi-sub{font-size:0.72rem;color:var(--sub);margin-top:2px}
+.kpi-delta{font-size:0.75rem;font-weight:600;margin-top:4px}
+.kpi-d-pos{color:var(--good)}
+.kpi-d-neg{color:var(--warn)}
+.m-warn{color:var(--warn)!important}
+.m-good{color:var(--good)!important}
+.alert-banner{padding:12px 16px;border-radius:8px;margin-bottom:16px;font-size:0.9rem}
+.alert-good{background:#e8f5e9;border-left:4px solid var(--good);color:#1b5e20}
+.alert-warn{background:#fff3e0;border-left:4px solid #f57c00;color:#e65100}
+.note-callout{font-size:0.82rem;color:var(--sub);background:#f8f9fb;padding:10px 14px;border-radius:6px;line-height:1.5}
+.seq-table,.ga-table,.coverage-table{width:100%;border-collapse:collapse;font-size:0.82rem}
+.seq-table th,.ga-table th,.coverage-table th{background:#f1f3f8;padding:8px 10px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;color:var(--sub);border-bottom:2px solid var(--border)}
+.seq-table td,.ga-table td,.coverage-table td{padding:8px 10px;border-bottom:1px solid var(--border)}
+.seq-name{font-weight:600;font-size:0.85rem}
+.seq-note{font-size:0.72rem;color:var(--sub)}
+.s-active{background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:10px;font-size:0.7rem;font-weight:600}
+.s-paused{background:#fff3e0;color:#e65100;padding:2px 8px;border-radius:10px;font-size:0.7rem;font-weight:600}
+.s-draft{background:#fff8e1;color:var(--draft);padding:2px 8px;border-radius:10px;font-size:0.7rem;font-weight:600}
+.ga-total{background:#f1f3f8;font-weight:700}
+.insights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.insight-card{border-left:3px solid var(--accent);background:#f8f9fb;padding:12px 14px;border-radius:0 8px 8px 0;font-size:0.85rem}
+.ic-body{line-height:1.5}
+.ns-list{list-style:none;padding:0}
+.ns-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border)}
+.ns-item:last-child{border-bottom:none}
+.ns-prio{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0}
+.ns-action{font-size:0.88rem;line-height:1.5}
+.done-check{color:var(--good)}
+.def-card{background:#f8f9fb;border-radius:6px;padding:10px 14px;margin-bottom:6px}
+.def-name{font-weight:600;font-size:0.82rem;margin-bottom:2px}
+.def-desc{font-size:0.75rem;color:var(--sub);line-height:1.5}
+.error{color:var(--warn);padding:20px;text-align:center}
+.cov-found{background:#f1f8e9}
 .cov-added{background:#e3f2fd}
-.ga-table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);margin-bottom:16px}
-.ga-table th{background:#e3f2fd;padding:10px 12px;text-align:left;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;color:#1565c0;font-weight:700;border-bottom:2px solid #bbdefb}
-.ga-table td{padding:10px 12px;border-bottom:1px solid #f0f2f6;font-size:0.85rem}
-.ga-table .ga-total{background:#e3f2fd;font-weight:700}
-.def-card{background:#f8f9fb;border-radius:8px;padding:14px 18px;margin-bottom:8px;border-left:3px solid #8892a4}
-.def-card .def-name{font-weight:700;font-size:0.9rem;color:#1a1f2e;margin-bottom:4px}
-.def-card .def-desc{font-size:0.82rem;color:#5a6275;line-height:1.5}
-.error{background:#fff0f0;color:#c62828;padding:20px;border-radius:8px}
-.done-check{color:#4caf50;font-weight:700}
-@media(max-width:768px){.header,.cadence-bar,.main{padding-left:20px;padding-right:20px}.hdr-left h1{font-size:1.6rem}.kpi-grid{grid-template-columns:repeat(2,1fr)}.insights-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.kpi-grid{grid-template-columns:1fr 1fr}.insights-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="header"><div class="hdr-inner"><div class="hdr-left"><div class="hdr-logo">MercenaryMarketing.ai</div><h1>Porch + Patio</h1><div class="subtitle" id="periodLabel">Performance Dashboard</div><div class="badges"><span class="badge badge-interim" id="badgeType">Report</span><span class="badge badge-baseline" id="badgeBaseline">Baseline</span><span class="badge badge-conf">Confidential</span></div></div><div class="hdr-right" id="reportMeta"></div></div></div>
-<div class="cadence-bar"><div class="cb-inner"><div class="cb-block"><div class="cb-label">Report Type</div><div class="cb-value" id="cbType">--</div></div><div class="cb-block"><div class="cb-label">Period</div><div class="cb-value" id="cbPeriod">--</div><div class="cb-sub" id="cbDays">--</div></div><div class="cb-block"><div class="cb-label">Baseline</div><div class="cb-value" id="cbBaselinePeriod">--</div><div class="cb-sub" id="cbBaselineDesc">--</div></div><div class="cb-block"><div class="cb-label">Next Report</div><div class="cb-value" id="cbNext">--</div></div></div></div>
-<div class="main" id="mainContent"><div class="error">Loading report data...</div></div>
+<div class="container">
+<div class="header">
+<h1>Porch + Patio</h1>
+<div id="periodLabel" style="font-size:1rem;opacity:0.85"></div>
+<div class="meta" id="reportMeta"></div>
+<div class="badge-row">
+<span class="badge" id="badgeType"></span>
+<span class="badge" id="badgeBaseline"></span>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:16px">
+<div class="kpi-card"><div class="kpi-label">Type</div><div class="kpi-value" style="font-size:1rem" id="cbType"></div></div>
+<div class="kpi-card"><div class="kpi-label">Period</div><div class="kpi-value" style="font-size:1rem" id="cbPeriod"></div></div>
+<div class="kpi-card"><div class="kpi-label">Duration</div><div class="kpi-value" style="font-size:1rem" id="cbDays"></div></div>
+<div class="kpi-card"><div class="kpi-label">Baseline</div><div class="kpi-value" style="font-size:1rem" id="cbBaselinePeriod"></div></div>
+<div class="kpi-card"><div class="kpi-label">Next Report</div><div class="kpi-value" style="font-size:1rem" id="cbNext"></div></div>
+</div>
+
+<div id="mainContent"></div>
+</div>
+
 <script>
-fetch('report.json?v=7')
+fetch('report.json?v=8')
   .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
   .then(function(d){
 var r=d.report,ov=d.overview,cp=d.comparison,pd=cp.periodDelta,seqs=d.sequences,ins=d.insights,ns=d.nextSteps,notes=d.notes;
-var cov=d.customerCoverage,ga=d.googleAnalytics;
+var lm=d.listMaintenance,ga=d.googleAnalytics;
 
-document.getElementById('periodLabel').textContent = r.periodLabel + ' \u2014 #' + r.reportNumber;
+document.getElementById('periodLabel').textContent = r.periodLabel + ' — #' + r.reportNumber;
 document.getElementById('badgeType').textContent = r.periodLabel;
 document.getElementById('badgeBaseline').textContent = 'Baseline: ' + cp.baseline.period;
 document.getElementById('reportMeta').innerHTML =
@@ -96,56 +96,48 @@ document.getElementById('reportMeta').innerHTML =
   '<br><strong>Dashboard:</strong> <a href="' + r.dashboardUrl + '" style="color:#fff;opacity:0.7">' + r.dashboardUrl + '</a>';
 
 document.getElementById('cbType').textContent = r.periodLabel;
-document.getElementById('cbPeriod').textContent = r.periodStart + ' \u2014 ' + r.periodEnd;
+document.getElementById('cbPeriod').textContent = r.periodStart + ' — ' + r.periodEnd;
 document.getElementById('cbDays').textContent = r.periodDays + '-Day Period';
 document.getElementById('cbBaselinePeriod').textContent = cp.baseline.period;
-document.getElementById('cbBaselineDesc').textContent = 'Report #2 Baseline';
 document.getElementById('cbNext').textContent = notes.nextReport;
 
 var h = '';
 
 var activeCount = seqs.filter(function(s){return s.status==='ACTIVE'}).length;
 var pausedCount = seqs.filter(function(s){return s.status==='PAUSED'}).length;
-h += '<div class="alert-banner alert-good"><h3>ALL ' + activeCount + ' ACTIVE SEQUENCES SENDING (' + pausedCount + ' paused)</h3><p>' + (notes.sequenceChanges||'') + '</p></div>';
+var draftCount = seqs.filter(function(s){return s.status==='DRAFT'}).length;
+h += '<div class="alert-banner alert-good"><h3>' + activeCount + ' ACTIVE SEQUENCES SENDING (' + pausedCount + ' paused, ' + draftCount + ' draft)</h3><p>' + (notes.sequenceChanges||'') + '</p></div>';
 
-h += '<div class="section"><div class="section-title">\ud83d\udcca Pipeline Overview</div><div class="kpi-grid">';
+h += '<div class="section"><div class="section-title">📊 Pipeline Overview</div><div class="kpi-grid">';
 h += kc('Total Members', ov.totalMembers, 'across ' + ov.totalSequences + ' sequences');
 h += kc('Completed', ov.completedMembers, 'all steps finished');
 h += kc('In Progress', ov.inProgressMembers, 'mid-sequence');
-h += kc('Not Started', ov.notStartedMembers, 'queued in pipeline', ov.notStartedMembers > 500);
 h += kc('Total Sent', ov.totalSent.toLocaleString(), 'across all sequences');
 h += kc('Active Sequences', ov.activeSequences + ' of ' + ov.totalSequences, ov.pausedSequences + ' paused');
 h += '</div></div>';
 
-h += '<div class="section"><div class="section-title">\ud83d\udcc8 Engagement Overview</div><div class="kpi-grid">';
+h += '<div class="section"><div class="section-title">📈 Engagement Overview</div><div class="kpi-grid">';
 h += kc('Unique Opens', ov.totalUniqueOpens, 'overall OR: ' + ov.openRate + '%');
 h += kc('Unique Clicks', ov.totalUniqueClicks, 'overall CR: ' + ov.clickRate + '%');
 h += kc('Total Replies', ov.totalReplies, 'across all sequences');
 h += kc('Total Bounces', ov.totalBounces, 'overall BR: ' + ov.bounceRate + '%');
 h += kc('Out of Office', ov.totalOOO, 'auto-replies');
-h += kc('Bookings', ov.totalBookings, '<span style="color:#888">retail model \u2014 N/A</span>');
+h += kc('Bookings', ov.totalBookings, '<span style="color:#888">retail model — N/A</span>');
 h += '</div>';
 h += '<div class="note-callout" style="margin-top:12px"><strong>Conversion Model:</strong> ' + ov.bookingTrackingNote + '</div></div>';
 
-h += '<div class="section"><div class="section-title">\ud83d\udcac SMS Channel \u2014 Existing Customers</div><div class="kpi-grid">';
-h += kc('SMS Sent', ov.smsSent.toLocaleString(), 'Step 1 of Existing Customers');
-h += kc('SMS Delivered', ov.smsDelivered.toLocaleString(), '2 failures out of 2,274');
-h += kc('Delivery Rate', ov.smsDeliveryRate + '%', '<span style="color:#2e7d32;font-weight:700">NEAR-PERFECT</span>', false);
-h += '</div>';
-h += '<div class="note-callout" style="margin-top:12px"><strong>SMS Note:</strong> ' + notes.smsNote + '</div></div>';
+h += '<div class="section"><div class="section-title">💬 SMS Channel</div>';
+h += '<div class="note-callout"><strong>SMS Note:</strong> ' + notes.smsNote + '</div></div>';
 
-h += '<div class="section"><div class="section-title">\ud83d\udcc5 Period-over-Period Comparison</div><div class="kpi-grid">';
+h += '<div class="section"><div class="section-title">📅 Period-over-Period Comparison</div><div class="kpi-grid">';
 h += cmp('Executions', cp.current.executions.toLocaleString(), cp.baseline.executions.toLocaleString(), pd.executions);
-h += cmp('Completed Members', cp.current.completedMembers, cp.baseline.completedMembers, pd.completedMembers + ' (' + pd.completedMembersPct + ')');
-h += cmp('In Progress', cp.current.inProgress.toLocaleString(), cp.baseline.inProgress.toLocaleString(), pd.inProgressChange + ' (' + pd.inProgressPct + ')', true);
-h += cmp('Not Started', cp.current.notStarted, cp.baseline.notStarted, pd.notStarted + ' (' + pd.notStartedPct + ')');
 h += cmp('Bounces', cp.current.bounces, cp.baseline.bounces, pd.bounces + ' (' + pd.bounceRate + ')');
 h += cmp('Replies', cp.current.replies, cp.baseline.replies, String(pd.replies));
 h += cmp('Open Rate', cp.current.openRate + '%', cp.baseline.openRate + '%', pd.openRate);
 h += cmp('Click Rate', cp.current.clickRate + '%', cp.baseline.clickRate + '%', pd.clickRate);
 h += '</div></div>';
 
-h += '<div class="section"><div class="section-title">\ud83d\udd01 Sequence Status & Performance</div>';
+h += '<div class="section"><div class="section-title">🔄 Sequence Status & Performance</div>';
 h += '<div style="overflow-x:auto"><table class="seq-table"><thead><tr>';
 h += '<th>Sequence</th><th>Status</th><th>Members</th><th>Sent</th><th>Opens</th><th>OR</th><th>Clicks</th><th>CR</th><th>Bounces</th><th>BR</th><th>Replies</th></tr></thead><tbody>';
 seqs.forEach(function(s) {
@@ -157,7 +149,7 @@ seqs.forEach(function(s) {
   if(s.delta && s.delta.note) {
     h += '<div style="font-size:0.7rem;color:#1565c0;margin-top:2px">' + s.delta.note + '</div>';
   } else if(s.delta) {
-    h += '<div style="font-size:0.7rem;color:#999;margin-top:2px">\u0394: ' + s.delta.sent + ' sends, ' + s.delta.opens + ' opens</div>';
+    h += '<div style="font-size:0.7rem;color:#999;margin-top:2px">Δ: ' + s.delta.sent + ' sends, ' + s.delta.opens + ' opens</div>';
   }
   h += '</td>';
   h += '<td>' + statusHtml + '</td>';
@@ -175,40 +167,19 @@ seqs.forEach(function(s) {
 h += '</tbody></table></div>';
 h += '<div class="note-callout" style="margin-top:16px"><strong>Notes:</strong> ' + notes.dataAvailability + '</div></div>';
 
-if(cov) {
-  h += '<div class="section"><div class="section-title">\ud83d\udd0d Customer Database Coverage Audit</div>';
-  h += '<div class="note-callout" style="margin-bottom:16px"><strong>' + cov.totalOrders + ' recent in-store orders</strong> from ' + cov.source + ' | Coverage improved from <strong>' + cov.coverageBefore + ' \u2192 ' + cov.coverageAfter + '</strong> (all ' + cov.addedToDatabase + ' missing customers added ' + cov.addedDate + ')</div>';
-
-  h += '<table class="coverage-table"><thead><tr><th>Status</th><th>Count</th><th>%</th><th>Details</th></tr></thead><tbody>';
-  h += '<tr class="cov-found"><td><strong>\u2705 Already in database</strong></td><td>' + cov.alreadyInDatabase + '</td><td>' + cov.coverageBefore + '</td><td>In ' + cov.matchedList + '; now in sequence</td></tr>';
-  h += '<tr class="cov-added"><td><strong>\u2795 Added to database</strong></td><td>' + cov.addedToDatabase + '</td><td>' + (100 - parseFloat(cov.coverageBefore)) + '%</td><td>Added ' + cov.addedDate + '</td></tr>';
-  h += '<tr style="background:#f8f9fb;font-weight:700"><td><strong>Total Coverage</strong></td><td>' + cov.totalOrders + '</td><td><span class="done-check">' + cov.coverageAfter + '</span></td><td>All customers now reachable</td></tr>';
-  h += '</tbody></table>';
-
-  h += '<div style="font-weight:700;color:#2e7d32;margin-bottom:8px">\u2705 Already in Database (' + cov.matchedList + ')</div>';
-  h += '<table class="coverage-table"><thead><tr><th>Customer</th><th>Email</th><th>Phone</th><th>Order Date</th><th>Total</th><th>In Sequence?</th></tr></thead><tbody>';
-  cov.matches.forEach(function(m){
-    h += '<tr class="cov-found"><td><strong>' + m.firstName + ' ' + m.lastName + '</strong>' + (m.note?' <span style="font-size:0.75rem;color:#888">('+m.note+')</span>':'') + '</td>';
-    h += '<td>' + m.email + '</td><td>' + m.phone + '</td><td>' + m.orderDate + '</td><td><strong>' + m.total + '</strong></td>';
-    h += '<td>' + (m.inSequence ? '<span class="done-check">\u2705</span>' : '\u274c') + '</td></tr>';
-  });
-  h += '</tbody></table>';
-
-  h += '<div style="font-weight:700;color:#1565c0;margin:16px 0 8px">\u2795 Added to Database ' + cov.addedDate + '</div>';
-  h += '<table class="coverage-table"><thead><tr><th>Customer</th><th>Email</th><th>Phone</th><th>Order Date</th><th>Total</th><th>Status</th></tr></thead><tbody>';
-  cov.unmatched.forEach(function(m){
-    h += '<tr class="cov-added"><td><strong>' + m.firstName + ' ' + m.lastName + '</strong></td>';
-    h += '<td>' + m.email + '</td><td>' + m.phone + '</td><td>' + m.orderDate + '</td><td><strong>' + m.total + '</strong></td>';
-    h += '<td><span class="done-check">\u2705 ' + (m.status||'Added') + '</span></td></tr>';
-  });
-  h += '</tbody></table>';
-
-  h += '<div class="note-callout" style="margin-top:16px"><strong>\u2139\ufe0f Note:</strong> ' + cov.clarifyingNote + '</div>';
-  h += '<div class="note-callout" style="margin-top:8px"><strong>Result:</strong> ' + cov.recommendation + '</div></div>';
+if(lm) {
+  h += '<div class="section"><div class="section-title">🧹 Customer List Maintenance — July 2026</div>';
+  h += '<div class="note-callout" style="margin-bottom:16px">' + lm.note + '</div>';
+  h += '<table class="coverage-table"><thead><tr><th>Step</th><th>Count</th><th>Result</th></tr></thead><tbody>';
+  h += '<tr><td><strong>Starting records</strong></td><td>' + lm.startingCount.toLocaleString() + '</td><td>All active customer records merged into master list</td></tr>';
+  h += '<tr class="cov-found"><td><strong>Duplicates removed</strong></td><td>−' + lm.duplicatesRemoved + '</td><td>' + lm.afterDedup.toLocaleString() + ' unique records after dedup</td></tr>';
+  h += '<tr class="cov-added"><td><strong>Bouncing/blocked removed</strong></td><td>−' + lm.bouncingRemoved + '</td><td>Cross-referenced against recent campaign data</td></tr>';
+  h += '<tr style="background:#f1f8e9;font-weight:700"><td><strong>Final clean list</strong></td><td><span class="done-check">' + lm.finalCount.toLocaleString() + '</span></td><td>Verified contacts loaded into customer database</td></tr>';
+  h += '</tbody></table></div>';
 }
 
 if(ga) {
-  h += '<div class="section"><div class="section-title">\ud83d\udcf1 Google Analytics \u2014 UTM Campaign Performance</div>';
+  h += '<div class="section"><div class="section-title">📱 Google Analytics — UTM Campaign Performance</div>';
   h += '<div class="note-callout" style="margin-bottom:16px"><strong>Source:</strong> ' + ga.source + ' | Data covers the reporting period</div>';
 
   h += '<div style="font-weight:700;color:#1a1f2e;margin-bottom:12px">Metric Definitions</div>';
@@ -218,14 +189,16 @@ if(ga) {
     h += '<div class="def-card"><div class="def-name">' + d.label + '</div><div class="def-desc">' + d.definition + '</div></div>';
   });
 
-  h += '<table class="ga-table" style="margin-top:16px"><thead><tr><th>Segment (Source)</th><th>Campaign ID</th><th>Event Count</th><th>Engaged Sessions</th><th>Sessions</th><th>Key Events</th></tr></thead><tbody>';
+  h += '<table class="ga-table" style="margin-top:16px"><thead><tr><th>Segment (Source)</th><th>Campaign ID</th><th>Event Count</th><th>Δ Events</th><th>Engaged</th><th>Sessions</th><th>Δ Sessions</th><th>Key Events</th></tr></thead><tbody>';
   ga.data.forEach(function(row,i){
     var isTotal = row.segment.indexOf('Total')===0;
     h += '<tr class="' + (isTotal?'ga-total':'') + '"><td><strong>' + row.segment + '</strong></td>';
     h += '<td>' + row.campaignId + '</td>';
     h += '<td>' + row.eventCount.toLocaleString() + '</td>';
+    h += '<td style="' + (row.deltaEvents&&row.deltaEvents.indexOf('+')===0?'color:#2e7d32':'') + (row.deltaEvents&&row.deltaEvents.indexOf('-')===0?'color:#c62828':'') + (row.deltaEvents==='NEW'?'color:#1565c0;font-weight:600':'') + '">' + (row.deltaEvents||'') + '</td>';
     h += '<td>' + row.engagedSessions + '</td>';
     h += '<td>' + row.sessions + '</td>';
+    h += '<td style="' + (row.deltaSessions&&row.deltaSessions.indexOf('+')===0?'color:#2e7d32':'') + (row.deltaSessions&&row.deltaSessions.indexOf('-')===0?'color:#c62828':'') + (row.deltaSessions==='NEW'?'color:#1565c0;font-weight:600':'') + '">' + (row.deltaSessions||'') + '</td>';
     h += '<td>' + row.keyEvents + '</td></tr>';
   });
   h += '</tbody></table>';
@@ -241,18 +214,18 @@ if(ga) {
   h += '</div>';
 }
 
-h += '<div class="section"><div class="section-title">\ud83d\udca1 Key Insights</div><div class="insights-grid">';
+h += '<div class="section"><div class="section-title">💡 Key Insights</div><div class="insights-grid">';
 ins.forEach(function(i) {
   var txt = typeof i === 'string' ? i : (i.title ? '<strong>' + i.title + '</strong><br>' + i.detail : i.detail || i);
   h += '<div class="insight-card"><div class="ic-body">' + txt + '</div></div>';
 });
 h += '</div></div>';
 
-h += '<div class="section"><div class="section-title">\u2705 Recommended Next Steps</div><ul class="ns-list">';
+h += '<div class="section"><div class="section-title">✅ Recommended Next Steps</div><ul class="ns-list">';
 ns.forEach(function(n, idx) {
   var txt = typeof n === 'string' ? n : n.action;
-  var isDone = typeof txt === 'string' && txt.indexOf('\u2705') === 0;
-  h += '<li class="ns-item"><div class="ns-prio" style="' + (isDone?'background:#4caf50':'') + '">' + (isDone?'\u2713':(idx+1)) + '</div><div><div class="ns-action' + (isDone?' done-check':'') + '">' + txt + '</div></div></li>';
+  var isDone = typeof txt === 'string' && txt.indexOf('✅') === 0;
+  h += '<li class="ns-item"><div class="ns-prio" style="' + (isDone?'background:#4caf50':'') + '">' + (isDone?'✓':(idx+1)) + '</div><div><div class="ns-action' + (isDone?' done-check':'') + '">' + txt + '</div></div></li>';
 });
 h += '</ul></div>';
 
@@ -266,7 +239,7 @@ function kc(label, value, sub, warn) {
 }
 function cmp(label, curr, base, delta, neg) {
   var dc = neg || (typeof delta === 'string' && delta.indexOf('-') === 0) ? 'kpi-d-neg' : 'kpi-d-pos';
-  return '<div class="kpi-card"><div class="kpi-label">' + label + '</div><div class="kpi-value" style="font-size:1.4rem">' + curr + '</div><div class="kpi-sub">Baseline: ' + base + '</div><div class="kpi-delta ' + dc + '">\u0394 ' + delta + '</div></div>';
+  return '<div class="kpi-card"><div class="kpi-label">' + label + '</div><div class="kpi-value" style="font-size:1.4rem">' + curr + '</div><div class="kpi-sub">Baseline: ' + base + '</div><div class="kpi-delta ' + dc + '">Δ ' + delta + '</div></div>';
 }
 </script>
 </body>
