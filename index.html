@@ -117,10 +117,10 @@ h += kc('Active Sequences', ov.activeSequences + ' of ' + ov.totalSequences, ov.
 h += '</div></div>';
 
 h += '<div class="section"><div class="section-title">📈 Engagement Overview</div><div class="kpi-grid">';
-h += kc('Unique Opens', ov.totalUniqueOpens, 'overall OR: ' + ov.openRate + '%');
-h += kc('Unique Clicks', ov.totalUniqueClicks, 'overall CR: ' + ov.clickRate + '%');
-h += kc('Total Bounces', ov.totalBounces, 'overall BR: ' + ov.bounceRate + '%');
-h += kc('Unsubscribes', ov.totalUnsubscribes, 'rate: ' + (ov.unsubscribeRate||'N/A') + '%', false);
+h += kc('Unique Opens', ov.totalUniqueOpens, 'OR: ' + ov.openRate + '% | Δ ' + (ov.totalOpensDelta||''));
+h += kc('Unique Clicks', ov.totalUniqueClicks, 'CR: ' + ov.clickRate + '% | Δ ' + (ov.totalClicksDelta||''));
+h += kc('Total Bounces', ov.totalBounces, 'BR: ' + ov.bounceRate + '% | Δ ' + (ov.bouncesDelta||''));
+h += kc('Unsubscribes', ov.totalUnsubscribes, 'rate: ' + (ov.unsubscribeRate||'N/A') + '%');
 h += kc('Out of Office', ov.totalOOO, 'auto-replies');
 h += kc('Bookings', ov.totalBookings, '<span style="color:#888">retail model — N/A</span>');
 h += '</div>';
@@ -131,10 +131,10 @@ h += '<div class="note-callout"><strong>SMS Note:</strong> ' + notes.smsNote + '
 
 h += '<div class="section"><div class="section-title">💬 Replies & Unsubscribes</div>';
 h += '<div class="kpi-grid">';
-h += kc('Total Replies', ov.totalReplies, 'across all sequences');
+h += kc('Total Replies', ov.totalReplies, '10 human + 1 auto-reply');
 h += kc('Unsubscribe Rate', ov.unsubscribeRate + '%', '70 total — industry threshold: 1%');
 h += '</div>';
-h += '<div class="note-callout" style="margin-top:12px"><strong>Reply Note:</strong> ' + (notes.replyNote||'') + '</div>';
+h += '<div class="note-callout" style="margin-top:12px"><strong>Reply Sentiment:</strong> ' + (notes.replyNote||'') + '</div>';
 h += '<div class="note-callout" style="margin-top:8px"><strong>Unsubscribe Note:</strong> ' + (notes.unsubscribeNote||'') + '</div></div>';
 
 h += '<div class="section"><div class="section-title">📅 Period-over-Period Comparison</div><div class="kpi-grid">';
