@@ -82,11 +82,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 </div>
 
 <script>
-fetch('report.json?v=8')
+fetch('report.json?v=9')
   .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
   .then(function(d){
 var r=d.report,ov=d.overview,cp=d.comparison,pd=cp.periodDelta,seqs=d.sequences,ins=d.insights,ns=d.nextSteps,notes=d.notes;
-var lm=d.listMaintenance,ga=d.googleAnalytics;
+var lm=d.listMaintenance,ga=d.googleAnalytics,dv=d.deliverability;
 
 document.getElementById('periodLabel').textContent = r.periodLabel + ' — #' + r.reportNumber;
 document.getElementById('badgeType').textContent = r.periodLabel;
@@ -207,6 +207,37 @@ if(ga) {
     h += '<div style="font-weight:700;color:#1a1f2e;margin:16px 0 8px">Key Takeaways</div>';
     h += '<div class="insights-grid">';
     ga.insights.forEach(function(i){
+      h += '<div class="insight-card" style="border-left-color:#1565c0"><div class="ic-body">' + i + '</div></div>';
+    });
+    h += '</div>';
+  }
+  h += '</div>';
+}
+
+if(dv) {
+  h += '<div class="section"><div class="section-title">📬 Email Deliverability — Google Postmaster Tools</div>';
+  h += '<div class="note-callout" style="margin-bottom:16px"><strong>Domain:</strong> porchandpationewsletter.com | ' + dv.note + '</div>';
+  
+  h += '<div class="kpi-grid" style="margin-bottom:16px">';
+  h += kc('Spam Rate', '<span style="color:#2e7d32;font-weight:700">' + dv.spamRate.value + '</span>', 'User-reported spam');
+  h += kc('Domain Rep', '<span style="color:#c62828;font-weight:700">' + dv.domainReputation.value + '</span>', 'Google rating');
+  h += kc('Auth (DKIM/SPF/DMARC)', '<span style="color:#2e7d32;font-weight:700">' + dv.authentication.value + '</span>', 'All passing');
+  h += kc('Delivery Errors', '<span style="color:#2e7d32;font-weight:700">' + dv.deliveryErrors.value + '</span>', 'Near-perfect');
+  h += kc('TLS Encryption', '<span style="color:#2e7d32;font-weight:700">' + dv.encryption.value + '</span>', 'Inbound');
+  h += '</div>';
+
+  h += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;margin-bottom:16px">';
+  var sections = [dv.spamRate, dv.domainReputation, dv.authentication, dv.encryption, dv.deliveryErrors];
+  sections.forEach(function(s){
+    var icon = s.status==='excellent' ? '✅' : s.status==='good' ? '👍' : '⚠️';
+    h += '<div class="insight-card" style="border-left-color:' + (s.status==='excellent'?'#2e7d32':s.status==='warning'?'#f57c00':'#1565c0') + '"><div class="ic-body"><strong>' + icon + ' ' + s.label + ':</strong> ' + s.detail + '</div></div>';
+  });
+  h += '</div>';
+
+  if(dv.insights && dv.insights.length) {
+    h += '<div style="font-weight:700;color:#1a1f2e;margin:16px 0 8px">Key Takeaways</div>';
+    h += '<div class="insights-grid">';
+    dv.insights.forEach(function(i){
       h += '<div class="insight-card" style="border-left-color:#1565c0"><div class="ic-body">' + i + '</div></div>';
     });
     h += '</div>';
