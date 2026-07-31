@@ -86,7 +86,7 @@ fetch('report.json?v=9')
   .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
   .then(function(d){
 var r=d.report,ov=d.overview,cp=d.comparison,pd=cp.periodDelta,seqs=d.sequences,ins=d.insights,ns=d.nextSteps,notes=d.notes;
-var lm=d.listMaintenance,ga=d.googleAnalytics,dv=d.deliverability;
+var lm=d.listMaintenance,ga=d.googleAnalytics,dv=d.deliverability,nl=d.newsletters;
 
 document.getElementById('periodLabel').textContent = r.periodLabel + ' — #' + r.reportNumber;
 document.getElementById('badgeType').textContent = r.periodLabel;
@@ -187,7 +187,7 @@ if(lm) {
   h += '</tbody></table></div>';
 }
 
-if(ga) {
+if(nl){h+='<div class="section"><div class="section-title">📰 July Newsletter Campaigns — SendGrid</div>';h+='<div class="note-callout" style="margin-bottom:12px"><strong>Domain:</strong> porchandpationewsletter.com | '+nl.note+'</div>';h+='<div class="kpi-grid" style="margin-bottom:12px">';h+=kc('Sent',nl.totals.sent.toLocaleString(),'4 campaigns');h+=kc('Opens',nl.totals.opens.toLocaleString(),'OR: '+nl.totals.openRate+'%');h+=kc('Clicks',nl.totals.clicks,'CR: '+nl.totals.clickRate+'%');h+=kc('Failed',nl.totals.failed,'SendGrid limit');h+=kc('Effective',nl.totals.effectiveSent.toLocaleString(),'excl. failures');h+='</div>';h+='<table class="seq-table" style="margin-bottom:12px"><thead><tr><th>Campaign</th><th>Date</th><th>Sent</th><th>Opens</th><th>OR</th><th>Clicks</th><th>CR</th><th>Failed</th></tr></thead><tbody>';nl.campaigns.forEach(function(c){h+='<tr><td class="seq-name">'+c.name+'</td><td>'+c.date+'</td><td>'+c.sent.toLocaleString()+'</td><td>'+c.opens.toLocaleString()+'</td><td>'+c.openRate+'%</td><td>'+c.clicks+'</td><td>'+c.clickRate+'%</td><td style="'+(c.failed>0?'color:#c62828':'')+'">'+c.failed+(c.failNote?'<div style="font-size:0.65rem;color:#888">'+c.failNote+'</div>':'')+'</td></tr>';});h+='</tbody></table><div class="insights-grid">';nl.insights.forEach(function(i){h+='<div class="insight-card" style="border-left-color:#1565c0"><div class="ic-body">'+i+'</div></div>';});h+='</div></div>';}if(ga){
   h += '<div class="section"><div class="section-title">📱 Google Analytics — UTM Campaign Performance</div>';
   h += '<div class="note-callout" style="margin-bottom:16px"><strong>Source:</strong> ' + ga.source + ' | Data covers the reporting period</div>';
 
