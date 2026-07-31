@@ -119,8 +119,8 @@ h += '</div></div>';
 h += '<div class="section"><div class="section-title">📈 Engagement Overview</div><div class="kpi-grid">';
 h += kc('Unique Opens', ov.totalUniqueOpens, 'overall OR: ' + ov.openRate + '%');
 h += kc('Unique Clicks', ov.totalUniqueClicks, 'overall CR: ' + ov.clickRate + '%');
-h += kc('Total Replies', ov.totalReplies, 'across all sequences');
 h += kc('Total Bounces', ov.totalBounces, 'overall BR: ' + ov.bounceRate + '%');
+h += kc('Unsubscribes', ov.totalUnsubscribes, 'rate: ' + (ov.unsubscribeRate||'N/A') + '%', false);
 h += kc('Out of Office', ov.totalOOO, 'auto-replies');
 h += kc('Bookings', ov.totalBookings, '<span style="color:#888">retail model — N/A</span>');
 h += '</div>';
@@ -129,15 +129,24 @@ h += '<div class="note-callout" style="margin-top:12px"><strong>Conversion Model
 h += '<div class="section"><div class="section-title">💬 SMS Channel</div>';
 h += '<div class="note-callout"><strong>SMS Note:</strong> ' + notes.smsNote + '</div></div>';
 
+h += '<div class="section"><div class="section-title">💬 Replies & Unsubscribes</div>';
+h += '<div class="kpi-grid">';
+h += kc('Total Replies', ov.totalReplies, 'across all sequences');
+h += kc('Unsubscribe Rate', ov.unsubscribeRate + '%', '70 total — industry threshold: 1%');
+h += '</div>';
+h += '<div class="note-callout" style="margin-top:12px"><strong>Reply Note:</strong> ' + (notes.replyNote||'') + '</div>';
+h += '<div class="note-callout" style="margin-top:8px"><strong>Unsubscribe Note:</strong> ' + (notes.unsubscribeNote||'') + '</div></div>';
+
 h += '<div class="section"><div class="section-title">📅 Period-over-Period Comparison</div><div class="kpi-grid">';
 h += cmp('Executions', cp.current.executions.toLocaleString(), cp.baseline.executions.toLocaleString(), pd.executions);
 h += cmp('Bounces', cp.current.bounces, cp.baseline.bounces, pd.bounces + ' (' + pd.bounceRate + ')');
 h += cmp('Replies', cp.current.replies, cp.baseline.replies, String(pd.replies));
 h += cmp('Open Rate', cp.current.openRate + '%', cp.baseline.openRate + '%', pd.openRate);
 h += cmp('Click Rate', cp.current.clickRate + '%', cp.baseline.clickRate + '%', pd.clickRate);
+h += cmp('Unsubscribes', cp.current.unsubscribes||'N/A', 'N/A (new)', pd.unsubscribes||'+70');
 h += '</div></div>';
 
-h += '<div class="section"><div class="section-title">🔄 Sequence Status & Performance</div>';
+h += '<div class="section"><div class="section-title">🔁 Sequence Status & Performance</div>';
 h += '<div style="overflow-x:auto"><table class="seq-table"><thead><tr>';
 h += '<th>Sequence</th><th>Status</th><th>Members</th><th>Sent</th><th>Opens</th><th>OR</th><th>Clicks</th><th>CR</th><th>Bounces</th><th>BR</th><th>Replies</th></tr></thead><tbody>';
 seqs.forEach(function(s) {
